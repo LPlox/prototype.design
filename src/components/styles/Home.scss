@@ -1,0 +1,98 @@
+@import "root";
+
+.title {
+  padding-top: $empty-padding;
+}
+
+.title__main--1 {
+  grid-area: 2 / grid1 / 3 / grid8;
+  font-family: $secondary-font;
+  color: $primary-text-color;
+  font-size: 10vw;
+  @include tablet-down {
+    font-family: $primary-font;
+  }
+}
+.title__main--2 {
+  grid-area: 4 / grid1 / 5 / grid8;
+  font-family: $secondary-font;
+  color: $primary-text-color;
+  font-size: 10vw;
+
+  @include tablet-down {
+    grid-area: 3 / grid1 / 4 / grid8;
+    font-family: $primary-font;
+  }
+}
+
+.title__mid {
+  grid-area: 3 / grid1 / 4 / grid8;
+  font-family: $secondary-font;
+  color: $primary-color;
+  font-size: 16px;
+  display: flex;
+  align-items: flex-end;
+  gap: 50px;
+  margin-left: 5px;
+
+  @include tablet-down {
+    grid-area: 4 / grid1 / 5 / grid8;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10vw;
+  }
+}
+
+.title__mid > h3 {
+  margin-right: 10px;
+}
+
+.title__desc {
+  grid-area: 4 / grid6 / 5 / grid8;
+  font-family: $special-font;
+  color: $primary-text-color;
+  font-size: 2vw;
+  display: flex;
+  align-self: end;
+
+  @include tablet-down {
+    grid-area: 4 / grid1 / 5 / grid6;
+    font-size: 1.4rem;
+    margin-top: 3rem;
+  }
+}
+
+.title__cta {
+  grid-area: 5 / grid6 / 6 / grid8;
+
+  @include tablet-down {
+    grid-area: 7 / grid1 / 8 / grid5;
+  }
+}
+
+.cta__btn {
+  width: 170px;
+  height: 50px;
+  background-color: $button-color;
+  color: $secondary-text-color;
+  font-family: $small-font;
+  font-size: 16px;
+  border: none;
+  margin-top: 20px;
+}
+
+.cta__btn:focus {
+  outline: 2px solid $primary-color;
+}
+
+.title__intro {
+  grid-area: 5 / grid1 / 6 / grid3;
+  font-family: $small-font;
+
+  @include tablet-down {
+    grid-area: 5 / grid1 / 6 / grid6;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+}

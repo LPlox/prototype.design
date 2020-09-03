@@ -1,0 +1,14 @@
+.main-grid-layout {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
+  grid-template-areas: "paddLeft grid1 grid2 grid3 grid4 grid5 grid6 grid7 grid8 paddRight";
+  gap: 10px;
+}
+
+@mixin grid-line {
+  border-bottom: 0.4px solid $primary-color;
+}
+//@include grid-position(5, grid1, 6, grid3) in the scss
+
+$empty-padding: 100px;

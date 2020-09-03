@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Roboto Condensed Regular";
+  src: url("../../../assets/fonts/RobotoCondensed-Regular.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Roboto Condensed Light";
+  src: url("../../../assets/fonts/RobotoCondensed-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto Light";
+  src: url("../../../assets/fonts/Roboto-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "EB Garamond";
+  src: url("../../../assets/fonts/EBGaramond-Regular.ttf") format("truetype");
+}
+
+$primary-font: "Roboto Condensed Regular";
+$secondary-font: "Roboto Condensed Light";
+$small-font: "Roboto Light";
+$special-font: "EB Garamond";
