@@ -5,7 +5,7 @@ import "./styles/Nav.scss";
 function Nav() {
   return (
     <header>
-      <nav className="nav main-grid-layout">
+      <nav className="nav">
         <div className="logo">
           <Link to="/">
             <img className="logo__img" src="logo.png" alt="logo" />

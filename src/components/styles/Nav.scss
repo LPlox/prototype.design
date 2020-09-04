@@ -1,13 +1,13 @@
 @import "root";
 
 .nav {
+  @include grid-main-layout;
   width: 100vw;
   height: 60px;
 
   background-color: $background-color;
   position: fixed;
   border-bottom: 0.4px solid $primary-color;
-  padding-left: 16px;
 }
 
 .nav__links {
@@ -16,8 +16,8 @@
   flex-direction: row;
   justify-items: center;
   align-items: center;
-  padding-right: 14px;
-  grid-area: 1 / grid6 / 2 / grid8;
+  padding-right: 10vw;
+  grid-area: 1 / grid8 / 2 / grid12;
   font-family: $primary-font;
 
   @include tablet-down {

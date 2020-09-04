@@ -1,14 +1,37 @@
-.main-grid-layout {
+@mixin grid-main-layout {
   grid-area: main;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
-  grid-template-areas: "paddLeft grid1 grid2 grid3 grid4 grid5 grid6 grid7 grid8 paddRight";
-  gap: 10px;
+  grid-template-columns: 4fr repeat(12, minmax(0, 1fr)) 4fr;
+  grid-template-areas: "paddLeft grid1 grid2 grid3 grid4 grid5 grid6 grid7 grid8 grid9 grid10 grid11 grid12 paddRight";
+  gap: 20px;
+}
+
+@mixin grid-center {
+  grid-column: grid1 / grid12;
+}
+
+@mixin grid1-3 {
+  grid-column: grid1 / grid4;
+}
+
+@mixin grid2-3 {
+  grid-column: grid5 / grid8;
+}
+
+@mixin grid3-3 {
+  grid-column: grid9 / grid12;
 }
 
 @mixin grid-line {
   border-bottom: 0.4px solid $primary-color;
 }
+
+@mixin grid-position($r1, $c1, $r2, $c2) {
+  grid-area: $r1 / $c1 / $r2 / $c2;
+}
 //@include grid-position(5, grid1, 6, grid3) in the scss
 
-$empty-padding: 100px;
+section {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
