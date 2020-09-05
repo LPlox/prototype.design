@@ -6,7 +6,7 @@ import GeneratedDesign from "../components/GeneratedDesign";
 
 function Home() {
   return (
-    <main className="Home">
+    <main className="home">
       <section className="title">
         <h1 className="title__main--top">PROTOTYPE.</h1>
         <div className="title__mid">
@@ -49,7 +49,7 @@ function Home() {
             of the fonts. The fonts are avaliable on Google Fonts and can be
             used freely after testing.
           </p>
-          <Link className="resource__link">
+          <Link to="/resources" className="resource__link">
             Font combinations resources &#8702;{" "}
           </Link>
         </div>
@@ -60,7 +60,7 @@ function Home() {
             purpose of website. Make your statement stronger with a color scheme
             that speaks to your purpose.{" "}
           </p>
-          <Link className="resource__link">
+          <Link to="/resources" className="resource__link">
             Color scheme resources &#8702;{" "}
           </Link>
         </div>
@@ -71,7 +71,7 @@ function Home() {
             design suggestion or for your final designs. Save your design by
             rendering the collection to save on your own{" "}
           </p>
-          <Link className="resource__link">
+          <Link to="/resources" className="resource__link">
             Design System resources &#8702;{" "}
           </Link>
         </div>

@@ -25,9 +25,12 @@
   }
 }
 
+.nav__link:hover {
+  border-bottom: 3px solid $button-color;
+}
+
 .nav__link--selected {
-  color: $button-color;
-  font-weight: 700;
+  border-bottom: 3px solid $button-color;
 }
 
 .nav__links > li {
@@ -40,6 +43,7 @@ li > a {
 }
 
 .logo {
+  grid-area: 1 / grid1 / 1 / grid1;
   display: flex;
   justify-content: flex-end;
   align-items: center;

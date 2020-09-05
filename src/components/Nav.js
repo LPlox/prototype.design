@@ -3,6 +3,12 @@ import { Link, NavLink } from "react-router-dom";
 import "./styles/Nav.scss";
 
 function Nav() {
+  const checkActive = (match, location) => {
+    if (!location) return false;
+    const { pathname } = location;
+    return pathname.includes("/prototype");
+  };
+
   return (
     <header>
       <nav className="nav">
@@ -14,19 +20,29 @@ function Nav() {
         <ul className="nav__links">
           <li>
             <NavLink
+              className="nav__link"
               activeClassName="nav__link--selected"
               to="/prototype/layout"
+              isActive={checkActive}
             >
               PROTOTYPE
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName="nav__link--selected" to="/about">
+            <NavLink
+              className="nav__link"
+              activeClassName="nav__link--selected"
+              to="/about"
+            >
               RESOURCES
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName="nav__link--selected" to="/contact">
+            <NavLink
+              className="nav__link"
+              activeClassName="nav__link--selected"
+              to="/contact"
+            >
               CONTACT
             </NavLink>
           </li>

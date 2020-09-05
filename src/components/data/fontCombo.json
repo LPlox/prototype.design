@@ -1,0 +1,23 @@
+[
+  {
+    "id": "001",
+    "header": {
+      "font": "Roboto",
+      "weight": 400,
+      "style": "",
+      "size": "2rem"
+    },
+    "subheader": {
+      "font": "Roboto Light Italic",
+      "weight": 100,
+      "style": "italic",
+      "size": "1.4rem"
+    },
+    "body": {
+      "font": "Roboto Light",
+      "weight": 100,
+      "style": "",
+      "size": "1rem"
+    }
+  }
+]

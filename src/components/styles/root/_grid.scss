@@ -12,18 +12,37 @@
 
 @mixin grid1-3 {
   grid-column: grid1 / grid4;
+  grid-row: 2;
+  @include tablet-down {
+    grid-area: 2;
+    grid-column: grid1 / grid12;
+  }
 }
 
 @mixin grid2-3 {
   grid-column: grid5 / grid8;
+  grid-row: 2;
+  @include tablet-down {
+    grid-area: 3;
+    grid-column: grid1 / grid12;
+  }
 }
 
 @mixin grid3-3 {
   grid-column: grid9 / grid12;
+  grid-row: 2;
+  @include tablet-down {
+    grid-area: 4;
+    grid-column: grid1 / grid12;
+  }
 }
 
 @mixin grid-line {
   border-bottom: 0.4px solid $primary-color;
+}
+
+@mixin grid-line-blk {
+  border-bottom: 3px solid $primary-text-color;
 }
 
 @mixin grid-position($r1, $c1, $r2, $c2) {
