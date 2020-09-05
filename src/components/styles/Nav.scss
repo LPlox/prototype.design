@@ -47,6 +47,9 @@ li > a {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  @include tablet-down {
+    grid-area: 1 / grid2 / 1 / grid2;
+  }
 }
 
 .logo__img {
