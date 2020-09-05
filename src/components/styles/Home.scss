@@ -5,6 +5,7 @@ $desc-size-mobile: 1.4rem;
 
 .title {
   @include grid-main-layout;
+  padding-top: 2vh;
 }
 
 .title__main--top {
@@ -156,5 +157,7 @@ $desc-size-mobile: 1.4rem;
 }
 
 .resource__link {
+  text-decoration: none;
   font-family: $special-font;
+  color: $primary-color;
 }

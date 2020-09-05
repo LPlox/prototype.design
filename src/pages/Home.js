@@ -49,7 +49,9 @@ function Home() {
             of the fonts. The fonts are avaliable on Google Fonts and can be
             used freely after testing.
           </p>
-          <a className="resource__link">Font combinations resources &#8702; </a>
+          <Link className="resource__link">
+            Font combinations resources &#8702;{" "}
+          </Link>
         </div>
         <div className="recources__box2">
           <h2 className="resource__sub-title">Color Scheme</h2>
@@ -58,7 +60,9 @@ function Home() {
             purpose of website. Make your statement stronger with a color scheme
             that speaks to your purpose.{" "}
           </p>
-          <a className="resource__link">Color scheme resources &#8702; </a>
+          <Link className="resource__link">
+            Color scheme resources &#8702;{" "}
+          </Link>
         </div>
         <div className="recources__box3">
           <h2 className="resource__sub-title">Design System</h2>
@@ -67,7 +71,9 @@ function Home() {
             design suggestion or for your final designs. Save your design by
             rendering the collection to save on your own{" "}
           </p>
-          <a className="resource__link">Design System resources &#8702; </a>
+          <Link className="resource__link">
+            Design System resources &#8702;{" "}
+          </Link>
         </div>
       </section>
     </main>

@@ -25,6 +25,11 @@
   }
 }
 
+.nav__link--selected {
+  color: $button-color;
+  font-weight: 700;
+}
+
 .nav__links > li {
   padding-right: 4vw;
 }
