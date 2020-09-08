@@ -2,21 +2,21 @@
   {
     "id": "001",
     "name": "Website1",
-    "jsx": "<div className='website-temp'><h1>Title</h1><h2>Sub Title</h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vero accusantium porro necessitatibus quasi totam inventore odio fuga iusto eum, iure sequi, consequatur sit. Accusantium iusto placeat eligendi rerum?</p></div>"
+    "jsx": "<div className='website-temp'><GenTitle className='' font={font.header.font} size={font.header.size} weight={font.header.weight}>Title</h1><GenSubHeader className='' font={font.subheader.font} size={font.subheader.size} weight={font.subheader.weight}>Sub Title</h2><GenBodyText className='' font={font.body.font} size={font.body.size} weight={font.body.weight}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vero accusantium porro necessitatibus quasi totam inventore odio fuga iusto eum, iure sequi, consequatur sit. Accusantium iusto placeat eligendi rerum?</p></div>"
   },
   {
     "id": "002",
     "name": "Website2",
-    "jsx": "<div className='website-temp'><h1>Title2</h1><h2>Sub Title</h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vero accusantium porro necessitatibus quasi totam inventore odio fuga iusto eum, iure sequi, consequatur sit. Accusantium iusto placeat eligendi rerum?</p></div>"
+    "jsx": "<div className='website-temp'><GenTitle className='' font={font.header.font} size={font.header.size} weight={font.header.weight}>Title</h1><GenSubHeader className='' font={font.subheader.font} size={font.subheader.size} weight={font.subheader.weight}>Sub Title</h2><GenBodyText className='' font={font.body.font} size={font.body.size} weight={font.body.weight}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vero accusantium porro necessitatibus quasi totam inventore odio fuga iusto eum, iure sequi, consequatur sit. Accusantium iusto placeat eligendi rerum?</p></div>"
   },
   {
     "id": "003",
     "name": "Website3",
-    "jsx": "<div className='website-temp'><h1>Title3</h1><h2>Sub Title</h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vero accusantium porro necessitatibus quasi totam inventore odio fuga iusto eum, iure sequi, consequatur sit. Accusantium iusto placeat eligendi rerum?</p></div>"
+    "jsx": "<div className='website-temp'><GenTitle className='' font={font.header.font} size={font.header.size} weight={font.header.weight}>Title</h1><GenSubHeader className='' font={font.subheader.font} size={font.subheader.size} weight={font.subheader.weight}>Sub Title</h2><GenBodyText className='' font={font.body.font} size={font.body.size} weight={font.body.weight}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vero accusantium porro necessitatibus quasi totam inventore odio fuga iusto eum, iure sequi, consequatur sit. Accusantium iusto placeat eligendi rerum?</p></div>"
   },
   {
     "id": "004",
     "name": "Website4",
-    "jsx": "<div className='website-temp'><h1>Title4</h1><h2>Sub Title</h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vero accusantium porro necessitatibus quasi totam inventore odio fuga iusto eum, iure sequi, consequatur sit. Accusantium iusto placeat eligendi rerum?</p></div>"
+    "jsx": "<div className='website-temp'><GenTitle className='' font={font.header.font} size={font.header.size} weight={font.header.weight}>Title</h1><GenSubHeader className='' font={font.subheader.font} size={font.subheader.size} weight={font.subheader.weight}>Sub Title</h2><GenBodyText className='' font={font.body.font} size={font.body.size} weight={font.body.weight}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vero accusantium porro necessitatibus quasi totam inventore odio fuga iusto eum, iure sequi, consequatur sit. Accusantium iusto placeat eligendi rerum?</p></div>"
   }
 ]

@@ -1,6 +1,7 @@
 [
   {
     "id": "001",
+    "keywords": "",
     "header": {
       "font": "Roboto",
       "weight": 400,
@@ -15,6 +16,182 @@
     },
     "body": {
       "font": "Roboto Light",
+      "weight": 100,
+      "style": "",
+      "size": "1rem"
+    }
+  },
+  {
+    "id": "002",
+    "keywords": "Classic, refined, sophisticated, traditional, elevated, elegant, understated",
+    "header": {
+      "font": "Oswald",
+      "weight": 400,
+      "style": "",
+      "size": "2rem"
+    },
+    "subheader": {
+      "font": "EB Garamond",
+      "weight": 100,
+      "style": "",
+      "size": "1.4rem"
+    },
+    "body": {
+      "font": "EB Garamond",
+      "weight": 100,
+      "style": "",
+      "size": "1rem"
+    }
+  },
+  {
+    "id": "003",
+    "keywords": "Friendly, approachable, editorial, soft, polished",
+    "header": {
+      "font": "Rufina",
+      "weight": 400,
+      "style": "",
+      "size": "2rem"
+    },
+    "subheader": {
+      "font": "Sintony",
+      "weight": 100,
+      "style": "",
+      "size": "1.4rem"
+    },
+    "body": {
+      "font": "Sintony",
+      "weight": 100,
+      "style": "",
+      "size": "1rem"
+    }
+  },
+  {
+    "id": "004",
+    "keywords": "Aspirational, luxurious, elevated, delicate, elegant, sophisticated, refined",
+    "header": {
+      "font": "Crimson Text",
+      "weight": 400,
+      "style": "",
+      "size": "2rem"
+    },
+    "subheader": {
+      "font": "Cardo",
+      "weight": 100,
+      "style": "",
+      "size": "1.4rem"
+    },
+    "body": {
+      "font": "Cardo",
+      "weight": 100,
+      "style": "",
+      "size": "1rem"
+    }
+  },
+  {
+    "id": "005",
+    "keywords": "Inviting, friendly, approachable, relatable, personal, community-driven",
+    "header": {
+      "font": "Lora",
+      "weight": 400,
+      "style": "",
+      "size": "2rem"
+    },
+    "subheader": {
+      "font": "Muli",
+      "weight": 100,
+      "style": "",
+      "size": "1.4rem"
+    },
+    "body": {
+      "font": "Muli",
+      "weight": 100,
+      "style": "",
+      "size": "1rem"
+    }
+  },
+  {
+    "id": "006",
+    "keywords": "Fancy, whimsical, playful, inviting, elegant, approachable, fun, care-free",
+    "header": {
+      "font": "Playfair Display",
+      "weight": 400,
+      "style": "",
+      "size": "2rem"
+    },
+    "subheader": {
+      "font": "Karla",
+      "weight": 100,
+      "style": "",
+      "size": "1.4rem"
+    },
+    "body": {
+      "font": "Karla",
+      "weight": 100,
+      "style": "",
+      "size": "1rem"
+    }
+  },
+  {
+    "id": "007",
+    "keywords": "Curvy, approachable, clean, elegant, refined",
+    "header": {
+      "font": "Julius Sans One",
+      "weight": 400,
+      "style": "",
+      "size": "2rem"
+    },
+    "subheader": {
+      "font": "Crimson Text",
+      "weight": 100,
+      "style": "",
+      "size": "1.4rem"
+    },
+    "body": {
+      "font": "Crimson Text",
+      "weight": 100,
+      "style": "",
+      "size": "1rem"
+    }
+  },
+  {
+    "id": "008",
+    "keywords": "Refined, elevated, luxurious, timeless, historical",
+    "header": {
+      "font": "Quattrocento",
+      "weight": 400,
+      "style": "",
+      "size": "2rem"
+    },
+    "subheader": {
+      "font": "Fanwood Text",
+      "weight": 100,
+      "style": "",
+      "size": "1.4rem"
+    },
+    "body": {
+      "font": "Fanwood Text",
+      "weight": 100,
+      "style": "",
+      "size": "1rem"
+    }
+  },
+  {
+    "id": "009",
+    "keywords": "Clean, pragmatic, modern, sleek, practical",
+    "header": {
+      "font": "Work Sans",
+      "weight": 400,
+      "style": "",
+      "size": "2rem"
+    },
+    "subheader": {
+      "font": "Lato",
+      "weight": 100,
+      "style": "",
+      "size": "1.4rem"
+    },
+    "body": {
+      "font": "Lato",
       "weight": 100,
       "style": "",
       "size": "1rem"

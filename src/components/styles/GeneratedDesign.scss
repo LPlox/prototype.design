@@ -9,4 +9,9 @@
   width: 100%;
   height: 60vh;
   background-color: $grey;
+
+  @include tablet-down {
+    width: 100%;
+    height: 30vh;
+  }
 }

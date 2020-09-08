@@ -6,6 +6,9 @@ $desc-size-mobile: 1.4rem;
 .home {
   background-image: url("../../assets/img/backgroundImg.png");
   background-position-y: -70px;
+  @include tablet-down {
+    background-size: 160%;
+  }
 }
 
 .title {
