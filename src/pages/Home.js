@@ -4,7 +4,14 @@ import { Link } from "react-router-dom";
 
 import GeneratedDesign from "../components/GeneratedDesign";
 
-function Home() {
+function Home({
+  font,
+  colorScheme,
+  handleColorChange,
+  handleFontChange,
+  renderWebDesign,
+  handleWebTempChange,
+}) {
   return (
     <main className="home">
       <section className="title">
@@ -39,7 +46,14 @@ function Home() {
         </p>
         <p className="title__deco--right">20.56.4332</p>
       </section>
-      <GeneratedDesign />
+      <GeneratedDesign
+        font={font}
+        colorScheme={colorScheme}
+        handleFontChange={handleFontChange}
+        handleColorChange={handleColorChange}
+        renderWebDesign={renderWebDesign}
+        handleWebTempChange={handleWebTempChange}
+      />
       <section className="resources">
         <h2 className="resources__title">External Resources</h2>
         <div className="recources__box1">

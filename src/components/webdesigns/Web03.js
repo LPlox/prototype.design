@@ -3,7 +3,7 @@ import GenTitle from "./GenTitle";
 import GenSubHeader from "./GenSubHeader";
 import GenBodyText from "./GenBodyText";
 
-function Web01({ header, subheader, body }) {
+function Web03({ header, subheader, body }) {
   return (
     <div className="Web01">
       <div className="website-temp">
@@ -12,14 +12,14 @@ function Web01({ header, subheader, body }) {
           font={header.font}
           size={header.size}
           weight={header.weight}
-          content={"Title"}
+          content={header.font.toString() + " 03"}
         />
         <GenSubHeader
           className=""
           font={subheader.font}
           size={subheader.size}
           weight={subheader.weight}
-          content={"Sub Title"}
+          content={subheader.font.toString()}
         />
         <GenBodyText
           className=""
@@ -27,7 +27,8 @@ function Web01({ header, subheader, body }) {
           size={body.size}
           weight={body.weight}
           content={
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vero accusantium porro necessitatibus quasi totam inventore odio fuga iusto eum, iure sequi, consequatur sit. Accusantium iusto placeat eligendi rerum?"
+            body.font.toString() +
+            " Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vero accusantium porro necessitatibus quasi totam inventore odio fuga iusto eum, iure sequi, consequatur sit. Accusantium iusto placeat eligendi rerum?"
           }
         />
       </div>
@@ -35,4 +36,4 @@ function Web01({ header, subheader, body }) {
   );
 }
 
-export default Web01;
+export default Web03;

@@ -1,0 +1,29 @@
+@mixin tablet-down {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+$margin-top-d: 14%;
+$margin-right-d: 6%;
+$margin-top-m: 10%;
+$margin-right-m: 6%;
+
+.website-temp {
+  margin: $margin-top-d $margin-right-d;
+  width: calc(100% - $margin-right-d * 2);
+  height: calc(100% - $margin-top-d * 2);
+  border: 0.4px solid black;
+
+  @include tablet-down {
+    margin: $margin-top-m $margin-right-m;
+    width: calc(100% - $margin-right-m * 2);
+    height: calc(100% - $margin-top-m * 2);
+  }
+}
