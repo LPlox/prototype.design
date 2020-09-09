@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
+import React from "react";
+// import { v4 as uuidv4 } from "uuid";
 import "./styles/GeneratedDesign.scss";
-const WebFont = require("webfontloader");
 
 function GeneratedDesign({
   font,
@@ -11,7 +10,6 @@ function GeneratedDesign({
   renderWebDesign,
   handleWebTempChange,
 }) {
-  // const WebIndex = 3;
   // const [colorDiv, setColorDiv] = useState([]);
 
   // useEffect(() => {
@@ -40,31 +38,6 @@ function GeneratedDesign({
   //     colorScheme.map((color) => arrayToRgb(color));
   //   }
   // }, [colorScheme]);
-
-  useEffect(() => {
-    if (font) {
-      WebFont.load({
-        google: {
-          families: [
-            `${font.header.font}: ${
-              font.header.weight ? font.header.weight : 400
-            }`,
-            `${font.subheader.font}: ${
-              font.subheader.weight ? font.subheader.weight : 400
-            }`,
-            `${font.body.font}: ${font.body.weight ? font.body.weight : 400}`,
-          ],
-        },
-      });
-      console.log(
-        `${font.header.font}: ${font.header.weight ? font.header.weight : 400}`,
-        `${font.subheader.font}: ${
-          font.subheader.weight ? font.subheader.weight : 400
-        }`,
-        `${font.body.font}: ${font.body.weight ? font.body.weight : 400}`
-      );
-    }
-  }, [font]);
 
   return (
     <section className="generated">

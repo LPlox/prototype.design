@@ -12,11 +12,14 @@ const Layout = lazy(() => import("./pages/Layout"));
 const Font = lazy(() => import("./pages/Font"));
 const Color = lazy(() => import("./pages/Color"));
 const Render = lazy(() => import("./pages/Render"));
+const WebFont = require("webfontloader");
 
 function App() {
-  const [colorScheme, setColorScheme] = useState();
+  const [colorScheme, setColorScheme] = useState("");
   const [fontData] = useState(fontGenData);
   const [font, setFont] = useState();
+
+  //Change state of the font, color and webtempleta
   const [changeFont, setChangeFont] = useState(false);
   const [changeColor, setChangeColor] = useState(true);
   const [changeWebTemp, setChangeWebTemp] = useState(false);
@@ -34,6 +37,7 @@ function App() {
         header={font.header}
         subheader={font.subheader}
         body={font.body}
+        colorScheme={colorScheme}
       />
     );
   }
@@ -54,11 +58,18 @@ function App() {
       })
         .then((response) => response.json())
         .then((json) => {
-          console.log(json);
-          setColorScheme(Object.values(json));
+          const rawColorArrayObject = Object.values(json.result);
+          setColorScheme(rawToRBG(rawColorArrayObject));
         })
         .catch((error) => console.error(error));
       setChangeColor(false);
+    }
+
+    function rawToRBG(arr) {
+      const newRGB = arr.map((colorNum) => {
+        return "rgb(" + colorNum.join() + ")";
+      });
+      return newRGB;
     }
   }, [changeColor]);
 
@@ -74,30 +85,30 @@ function App() {
   }, [changeFont, fontData]);
 
   //Load the selected fonts
-  // useEffect(() => {
-  //   if (font) {
-  //     WebFont.load({
-  //       google: {
-  //         families: [
-  //           `${font.header.font}: ${
-  //             font.header.weight ? font.header.weight : 400
-  //           }`,
-  //           `${font.subheader.font}: ${
-  //             font.subheader.weight ? font.subheader.weight : 400
-  //           }`,
-  //           `${font.body.font}: ${font.body.weight ? font.body.weight : 400}`,
-  //         ],
-  //       },
-  //     });
-  //     console.log(
-  //       `${font.header.font}: ${font.header.weight ? font.header.weight : 400}`,
-  //       `${font.subheader.font}: ${
-  //         font.subheader.weight ? font.subheader.weight : 400
-  //       }`,
-  //       `${font.body.font}: ${font.body.weight ? font.body.weight : 400}`
-  //     );
-  //   }
-  // }, [font]);
+  useEffect(() => {
+    if (font) {
+      WebFont.load({
+        google: {
+          families: [
+            `${font.header.font}: ${
+              font.header.weight ? font.header.weight : 400
+            }`,
+            `${font.subheader.font}: ${
+              font.subheader.weight ? font.subheader.weight : 400
+            }`,
+            `${font.body.font}: ${font.body.weight ? font.body.weight : 400}`,
+          ],
+        },
+      });
+      console.log(
+        `${font.header.font}: ${font.header.weight ? font.header.weight : 400}`,
+        `${font.subheader.font}: ${
+          font.subheader.weight ? font.subheader.weight : 400
+        }`,
+        `${font.body.font}: ${font.body.weight ? font.body.weight : 400}`
+      );
+    }
+  }, [font]);
 
   //Routing
   return (
