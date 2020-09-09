@@ -24,11 +24,3 @@
     height: 70%;
   }
 }
-
-.content-temp {
-  transform: scale(0.8, 0.8);
-
-  @include tablet-down {
-    transform: scale(0.5, 0.5);
-  }
-}
