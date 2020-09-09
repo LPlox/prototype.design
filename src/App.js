@@ -29,8 +29,7 @@ function App() {
 
   //Render a website template
   function renderWebDesign() {
-    // const type = "Web0" + randomWebTemp;
-    const type = "Web01";
+    const type = "Web0" + randomWebTemp;
     const ComponentToRender = Webdesigns[type];
     return (
       <ComponentToRender
