@@ -16,7 +16,7 @@ function Home({
 }) {
   const renderStyle = {
     width: "100%",
-    height: windowWidth > 768 ? "90vh" : "44vh",
+    height: windowWidth > 768 ? "90vh" : "50vh",
     backgroundColor: colorScheme ? colorScheme[2] : "grey",
     gridColumn: "grid1 / grid12",
     gridRow: "3",
@@ -26,7 +26,7 @@ function Home({
     color: colorScheme ? colorScheme[4] : "white",
     gridColumn: "grid1 / grid12",
     gridRow: "4",
-    top: windowWidth > 768 ? "-20vh" : "-10vh",
+    top: windowWidth > 768 ? "-20vh" : "-12vh",
     marginLeft: "5%",
     height: "10px",
   };
