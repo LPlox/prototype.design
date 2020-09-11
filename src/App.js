@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import fontGenData from "./components/data/fontCombo.json";
 import Webdesigns from "./components/webdesigns";
+
 const Resources = lazy(() => import("./pages/Resources"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Layout = lazy(() => import("./pages/Layout"));
@@ -15,17 +16,23 @@ const Render = lazy(() => import("./pages/Render"));
 const WebFont = require("webfontloader");
 
 function App() {
-  const [colorScheme, setColorScheme] = useState("");
+  //load raw font data
   const [fontData] = useState(fontGenData);
+
+  //Most important states
+  const [colorScheme, setColorScheme] = useState();
   const [font, setFont] = useState();
+  const [windowWidth, setWindowWidth] = useState();
+  const [randomWebTemp, setRandomWebTemp] = useState(
+    // Math.floor(Math.random() * Math.floor(3)) + 1
+    1
+  );
 
   //Change state of the font, color and webtempleta
+  const [fontMultiplier, setFontMultiplier] = useState(2);
   const [changeFont, setChangeFont] = useState(false);
   const [changeColor, setChangeColor] = useState(true);
   const [changeWebTemp, setChangeWebTemp] = useState(false);
-  const [randomWebTemp, setRandomWebTemp] = useState(
-    Math.floor(Math.random() * Math.floor(3)) + 1
-  );
 
   //Render a website template
   function renderWebDesign() {
@@ -37,9 +44,20 @@ function App() {
         subheader={font.subheader}
         body={font.body}
         colorScheme={colorScheme}
+        fontMultiplier={fontMultiplier}
       />
     );
   }
+
+  useEffect(() => {
+    if (windowWidth) {
+      if (windowWidth > 768) {
+        setFontMultiplier(2);
+      } else {
+        setFontMultiplier(1);
+      }
+    }
+  }, [windowWidth]);
 
   useEffect(() => {
     if (changeWebTemp)
@@ -109,6 +127,16 @@ function App() {
     }
   }, [font]);
 
+  //Window width
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   //Routing
   return (
     <Router>
@@ -131,6 +159,7 @@ function App() {
                 handleWebTempChange={() => {
                   setChangeWebTemp(true);
                 }}
+                windowWidth={windowWidth}
               />
             </Route>
             <Route path="/resources">

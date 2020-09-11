@@ -8,6 +8,7 @@
   background-color: $background-color;
   position: fixed;
   border-bottom: 0.4px solid $primary-color;
+  z-index: 1;
 }
 
 .nav__links {

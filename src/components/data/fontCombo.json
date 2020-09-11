@@ -6,19 +6,19 @@
       "font": "Roboto",
       "weight": 400,
       "style": "",
-      "size": "2rem"
+      "size": 1
     },
     "subheader": {
       "font": "Roboto Light Italic",
       "weight": 100,
       "style": "italic",
-      "size": "1.4rem"
+      "size": 0.6
     },
     "body": {
       "font": "Roboto Light",
       "weight": 100,
       "style": "",
-      "size": "1rem"
+      "size": 0.4
     }
   },
   {
@@ -28,19 +28,19 @@
       "font": "Oswald",
       "weight": 400,
       "style": "",
-      "size": "2rem"
+      "size": 1
     },
     "subheader": {
       "font": "EB Garamond",
       "weight": 100,
       "style": "",
-      "size": "1.4rem"
+      "size": 0.6
     },
     "body": {
       "font": "EB Garamond",
       "weight": 100,
       "style": "",
-      "size": "1rem"
+      "size": 0.4
     }
   },
   {
@@ -50,19 +50,19 @@
       "font": "Rufina",
       "weight": 400,
       "style": "",
-      "size": "2rem"
+      "size": 1
     },
     "subheader": {
       "font": "Sintony",
       "weight": 100,
       "style": "",
-      "size": "1.4rem"
+      "size": 0.6
     },
     "body": {
       "font": "Sintony",
       "weight": 100,
       "style": "",
-      "size": "1rem"
+      "size": 0.4
     }
   },
   {
@@ -72,19 +72,19 @@
       "font": "Crimson Text",
       "weight": 400,
       "style": "",
-      "size": "2rem"
+      "size": 1
     },
     "subheader": {
       "font": "Cardo",
       "weight": 100,
       "style": "",
-      "size": "1.4rem"
+      "size": 0.6
     },
     "body": {
       "font": "Cardo",
       "weight": 100,
       "style": "",
-      "size": "1rem"
+      "size": 0.4
     }
   },
   {
@@ -94,19 +94,19 @@
       "font": "Lora",
       "weight": 400,
       "style": "",
-      "size": "2rem"
+      "size": 1
     },
     "subheader": {
       "font": "Muli",
       "weight": 100,
       "style": "",
-      "size": "1.4rem"
+      "size": 0.6
     },
     "body": {
       "font": "Muli",
       "weight": 100,
       "style": "",
-      "size": "1rem"
+      "size": 0.4
     }
   },
   {
@@ -116,19 +116,19 @@
       "font": "Playfair Display",
       "weight": 400,
       "style": "",
-      "size": "2rem"
+      "size": 1
     },
     "subheader": {
       "font": "Karla",
       "weight": 100,
       "style": "",
-      "size": "1.4rem"
+      "size": 0.6
     },
     "body": {
       "font": "Karla",
       "weight": 100,
       "style": "",
-      "size": "1rem"
+      "size": 0.4
     }
   },
   {
@@ -138,19 +138,19 @@
       "font": "Julius Sans One",
       "weight": 400,
       "style": "",
-      "size": "2rem"
+      "size": 1
     },
     "subheader": {
       "font": "Crimson Text",
       "weight": 100,
       "style": "",
-      "size": "1.4rem"
+      "size": 0.6
     },
     "body": {
       "font": "Crimson Text",
       "weight": 100,
       "style": "",
-      "size": "1rem"
+      "size": 0.4
     }
   },
   {
@@ -160,19 +160,19 @@
       "font": "Quattrocento",
       "weight": 400,
       "style": "",
-      "size": "2rem"
+      "size": 1
     },
     "subheader": {
       "font": "Fanwood Text",
       "weight": 100,
       "style": "",
-      "size": "1.4rem"
+      "size": 0.6
     },
     "body": {
       "font": "Fanwood Text",
       "weight": 100,
       "style": "",
-      "size": "1rem"
+      "size": 0.4
     }
   },
   {
@@ -182,19 +182,19 @@
       "font": "Work Sans",
       "weight": 400,
       "style": "",
-      "size": "2rem"
+      "size": 1
     },
     "subheader": {
       "font": "Lato",
       "weight": 100,
       "style": "",
-      "size": "1.4rem"
+      "size": 0.6
     },
     "body": {
       "font": "Lato",
       "weight": 100,
       "style": "",
-      "size": "1rem"
+      "size": 0.4
     }
   }
 ]

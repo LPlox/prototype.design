@@ -25,3 +25,24 @@ $header-size: 2rem;
 $subheader-size: 1.4rem;
 $body-text-size: 1rem;
 $body-text-height: 1.8;
+
+@mixin default-header {
+  font-family: $secondary-font;
+  font-size: $header-size;
+}
+
+@mixin default-subheader {
+  font-family: $secondary-font;
+  font-size: $subheader-size;
+}
+
+@mixin default-body {
+  font-family: $small-font;
+  font-size: $body-text-size;
+  line-height: $body-text-height;
+}
+
+@mixin default-special {
+  font-family: $special-font;
+  font-size: 0.8rem;
+}

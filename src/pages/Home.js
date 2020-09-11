@@ -3,6 +3,7 @@ import "../components/styles/Home.scss";
 import { Link } from "react-router-dom";
 
 import GeneratedDesign from "../components/GeneratedDesign";
+import GeneratedInfo from "../components/GeneratedInfo";
 
 function Home({
   font,
@@ -11,7 +12,25 @@ function Home({
   handleFontChange,
   renderWebDesign,
   handleWebTempChange,
+  windowWidth,
 }) {
+  const renderStyle = {
+    width: "100%",
+    height: windowWidth > 768 ? "90vh" : "44vh",
+    backgroundColor: colorScheme ? colorScheme[2] : "grey",
+    gridColumn: "grid1 / grid12",
+    gridRow: "3",
+  };
+
+  const renderInfoStyle = {
+    color: colorScheme ? colorScheme[4] : "white",
+    gridColumn: "grid1 / grid12",
+    gridRow: "4",
+    top: windowWidth > 768 ? "-20vh" : "-10vh",
+    marginLeft: "5%",
+    height: "10px",
+  };
+
   return (
     <main className="home">
       <section className="title">
@@ -42,18 +61,58 @@ function Home({
           Last
           <br />
           Update <br />
-          2020.09.04
+          2020.09.10
         </p>
-        <p className="title__deco--right">20.56.4332</p>
+        <p className="title__deco--right">{"20.56." + windowWidth}</p>
       </section>
-      <GeneratedDesign
-        font={font}
-        colorScheme={colorScheme}
-        handleFontChange={handleFontChange}
-        handleColorChange={handleColorChange}
-        renderWebDesign={renderWebDesign}
-        handleWebTempChange={handleWebTempChange}
-      />
+      <section className="generated-design">
+        <h1 className="generated-design__title">Generated Design</h1>
+        <p className="generated-design__desc">
+          An example of generated design: The main functionality, simplified.
+          Try out design with 3 buttons. Take the design further or start
+          Prototyping!
+        </p>
+        <GeneratedDesign
+          font={font}
+          colorScheme={colorScheme}
+          handleFontChange={handleFontChange}
+          handleColorChange={handleColorChange}
+          renderWebDesign={renderWebDesign}
+          handleWebTempChange={handleWebTempChange}
+          divStyle={renderStyle}
+          windowWidth={windowWidth}
+        />
+        <GeneratedInfo
+          font={font}
+          colorScheme={colorScheme}
+          divStyle={renderInfoStyle}
+          windowWidth={windowWidth}
+        />
+        <div className="generated-design__btns">
+          <button className="generated-design__btn" onClick={handleColorChange}>
+            Change Colors
+          </button>
+          <button className="generated-design__btn" onClick={handleFontChange}>
+            Change Fonts
+          </button>
+          <button
+            className="generated-design__btn"
+            onClick={handleWebTempChange}
+          >
+            Change Templet
+          </button>
+        </div>
+
+        <Link
+          to="/prototype/render"
+          style={{
+            gridArea: "6 / grid1 / 6 / grid3",
+            textDecoration: "none",
+          }}
+        >
+          <div className="generated-design__cta">Render Prototype</div>
+        </Link>
+      </section>
       <section className="resources">
         <h2 className="resources__title">External Resources</h2>
         <div className="recources__box1">

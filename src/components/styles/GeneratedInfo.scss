@@ -1,0 +1,27 @@
+@import "root";
+
+.generated__info {
+  padding: 2%;
+  display: flex;
+  position: relative;
+  top: -6vh;
+  flex-direction: row;
+}
+
+.generated__fonts {
+  font-size: 1rem;
+  padding-right: 20px;
+  @include default-subheader;
+
+  @include tablet-down {
+    font-size: 0.8rem;
+  }
+}
+
+.generated__colors {
+  font-size: 1rem;
+
+  @include tablet-down {
+    font-size: 0.8rem;
+  }
+}

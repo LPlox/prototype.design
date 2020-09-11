@@ -14,167 +14,197 @@ $desc-size-mobile: 1.4rem;
 .title {
   @include grid-main-layout;
   padding-top: 2vh;
-}
 
-.title__main--top {
-  grid-area: 2 / grid1 / 3 / grid12;
-  font-family: $secondary-font;
-  color: $primary-text-color;
-  font-size: $title-size;
-  @include tablet-down {
-    font-family: $primary-font;
+  .title__main--top {
+    grid-area: 2 / grid1 / 3 / grid12;
+    font-family: $secondary-font;
+    color: $primary-text-color;
+    font-size: $title-size;
+    @include tablet-down {
+      font-family: $primary-font;
+    }
   }
-}
-.title__main--bottom {
-  grid-area: 4 / grid1 / 5 / grid12;
-  font-family: $secondary-font;
-  color: $primary-text-color;
-  font-size: $title-size;
+  .title__main--bottom {
+    grid-area: 4 / grid1 / 5 / grid12;
+    font-family: $secondary-font;
+    color: $primary-text-color;
+    font-size: $title-size;
 
-  @include tablet-down {
+    @include tablet-down {
+      grid-area: 3 / grid1 / 4 / grid12;
+      font-family: $primary-font;
+    }
+  }
+
+  .title__mid {
     grid-area: 3 / grid1 / 4 / grid12;
-    font-family: $primary-font;
-  }
-}
-
-.title__mid {
-  grid-area: 3 / grid1 / 4 / grid12;
-  font-family: $secondary-font;
-  color: $primary-color;
-  font-size: $body-text-size;
-  display: flex;
-  align-items: flex-end;
-  gap: 50px;
-  margin-left: 5px;
-
-  @include tablet-down {
-    grid-area: 4 / grid1 / 5 / grid12;
-    font-size: 0.7rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 10vw;
-    margin-left: 0;
-  }
-}
-
-.title__mid > h3 {
-  margin-right: 10px;
-}
-
-.title__desc {
-  grid-area: 4 / grid8 / 5 / grid12;
-  font-family: $secondary-font;
-  color: $primary-text-color;
-  font-size: $desc-size;
-  display: flex;
-  align-self: end;
-
-  @include tablet-down {
-    grid-area: 4 / grid1 / 5 / grid12;
-    font-size: $desc-size-mobile;
-    margin-top: 3rem;
-  }
-}
-
-.title__cta {
-  grid-area: 5 / grid8 / 6 / grid12;
-
-  @include tablet-down {
-    grid-area: 7 / grid1 / 8 / grid7;
-  }
-}
-
-.cta__btn {
-  width: 170px;
-  height: 50px;
-  background-color: $button-color;
-  color: $secondary-text-color;
-  font-family: $small-font;
-  font-size: $body-text-size;
-  border: none;
-  margin-top: 20px;
-  padding: 2%;
-}
-
-.cta__btn:focus {
-  outline: 2px solid $primary-color;
-}
-
-.title__intro {
-  grid-area: 5 / grid1 / 6 / grid3;
-  font-family: $small-font;
-
-  @include tablet-down {
-    grid-area: 5 / grid1 / 6 / grid8;
+    font-family: $secondary-font;
+    color: $primary-color;
     font-size: $body-text-size;
-    margin-top: 1rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 50px;
+    margin-left: 5px;
+
+    @include tablet-down {
+      grid-area: 4 / grid1 / 5 / grid12;
+      font-size: 0.7rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10vw;
+      margin-left: 0;
+    }
+  }
+
+  .title__mid > h3 {
+    margin-right: 10px;
+  }
+
+  .title__desc {
+    grid-area: 4 / grid8 / 5 / grid12;
+    font-family: $secondary-font;
+    color: $primary-text-color;
+    font-size: $desc-size;
+    display: flex;
+    align-self: end;
+
+    @include tablet-down {
+      grid-area: 4 / grid1 / 5 / grid12;
+      font-size: $desc-size-mobile;
+      margin-top: 3rem;
+    }
+  }
+
+  .title__cta {
+    grid-area: 5 / grid8 / 6 / grid12;
+
+    @include tablet-down {
+      grid-area: 7 / grid1 / 8 / grid7;
+    }
+
+    .cta__btn {
+      @include default-body;
+      @include default-cta;
+    }
+  }
+
+  .title__intro {
+    grid-area: 5 / grid1 / 6 / grid3;
+    font-family: $small-font;
+
+    @include tablet-down {
+      grid-area: 5 / grid1 / 6 / grid8;
+      font-size: $body-text-size;
+      margin-top: 1rem;
+    }
+  }
+
+  .title__deco--left {
+    grid-area: paddLeft;
+    color: $primary-color;
+    width: 100%;
+    text-align: right;
+    font-family: $primary-font;
+    @include tablet-down {
+      display: none;
+    }
+  }
+
+  .title__deco--right {
+    transform: rotate(-90deg);
+    grid-area: paddRight;
+    color: $primary-color;
+    font-family: $primary-font;
+    @include tablet-down {
+      display: none;
+    }
   }
 }
 
-.title__deco--left {
-  grid-area: paddLeft;
-  color: $primary-color;
-  width: 100%;
-  text-align: right;
-  font-family: $primary-font;
-  @include tablet-down {
-    display: none;
-  }
-}
+.generated-design {
+  @include grid-main-layout;
 
-.title__deco--right {
-  transform: rotate(-90deg);
-  grid-area: paddRight;
-  color: $primary-color;
-  font-family: $primary-font;
-  @include tablet-down {
-    display: none;
+  .generated-design__title {
+    @include grid-center;
+    @include default-header;
+    grid-row: 1;
+  }
+
+  .generated-design__desc {
+    @include grid-center;
+    @include default-body;
+    grid-row: 2;
+  }
+
+  .generated-design__cta {
+    @include default-cta;
+    @include grid-center;
+    grid-row: 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .generated-design__btns {
+    @include grid-center;
+    grid-row: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include tablet-down {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    button {
+      @include default-btn;
+      margin-top: 10px;
+    }
   }
 }
 
 .resources {
   @include grid-main-layout;
-}
 
-.resources__title {
-  @include grid-center;
-  @include grid-line-blk;
-  font-family: $secondary-font;
-  font-size: $header-size;
-}
-
-.recources__box1 {
-  @include grid1-3;
-  @include tablet-down {
-    margin-bottom: 2vh;
+  .resources__title {
+    @include grid-center;
+    @include grid-line-blk;
+    @include default-header;
   }
-}
-.recources__box2 {
-  @include grid2-3;
-  @include tablet-down {
-    margin-bottom: 2vh;
+
+  .recources__box1 {
+    @include grid1-3;
+    @include tablet-down {
+      margin-bottom: 2vh;
+    }
   }
-}
-.recources__box3 {
-  @include grid3-3;
-  @include tablet-down {
-    margin-bottom: 2vh;
+  .recources__box2 {
+    @include grid2-3;
+    @include tablet-down {
+      margin-bottom: 2vh;
+    }
   }
-}
+  .recources__box3 {
+    @include grid3-3;
+    @include tablet-down {
+      margin-bottom: 2vh;
+    }
+  }
 
-.resource__sub-title {
-  font-family: $secondary-font;
-  font-size: $subheader-size;
-}
+  .resource__sub-title {
+    @include default-subheader;
+  }
 
-.resources__body-text {
-  margin: 6vh 0 6vh 0;
-  font-family: $primary-font;
-  line-height: $body-text-height;
-}
+  .resources__body-text {
+    margin: 6vh 0 6vh 0;
+    font-family: $primary-font;
+    line-height: $body-text-height;
+  }
 
-.resource__link {
-  text-decoration: none;
-  font-family: $special-font;
-  color: $primary-color;
+  .resource__link {
+    text-decoration: none;
+    font-family: $special-font;
+    color: $primary-color;
+  }
 }

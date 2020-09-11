@@ -1,0 +1,27 @@
+@mixin default-btn {
+  border: 0.4px solid $primary-color;
+  min-width: 150px;
+  min-height: 40px;
+  background-color: $background-color;
+  color: $primary-color;
+  padding: 2% 8%;
+
+  &:focus {
+    outline: 2px solid $primary-color;
+  }
+}
+
+@mixin default-cta {
+  min-width: 150px;
+  min-height: 50px;
+  background-color: $button-color;
+  color: $secondary-text-color;
+  border: none;
+  margin-top: 10px;
+  padding: 2% 8%;
+  text-decoration: none;
+
+  &:focus {
+    outline: 2px solid $primary-color;
+  }
+}
