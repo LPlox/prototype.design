@@ -11,7 +11,7 @@
 }
 
 .website-temp {
-  margin: 15% 5%;
+  margin: 8% 5%;
   width: 90%;
   height: 60%;
   border: 0.4px solid black;
@@ -19,8 +19,7 @@
   position: relative;
 
   @include tablet-down {
-    margin: 10% 5%;
     width: 90%;
-    height: 70%;
+    height: 56%;
   }
 }
