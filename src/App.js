@@ -24,8 +24,7 @@ function App() {
   const [font, setFont] = useState();
   const [windowWidth, setWindowWidth] = useState();
   const [randomWebTemp, setRandomWebTemp] = useState(
-    // Math.floor(Math.random() * Math.floor(3)) + 1
-    1
+    Math.floor(Math.random() * Math.floor(3)) + 1
   );
 
   //Change state of the font, color and webtempleta
@@ -35,8 +34,8 @@ function App() {
   const [changeWebTemp, setChangeWebTemp] = useState(false);
 
   //Render a website template
-  function renderWebDesign() {
-    const type = "Web0" + randomWebTemp;
+  function renderWebDesign(num) {
+    const type = "Web" + num;
     const ComponentToRender = Webdesigns[type];
     return (
       <ComponentToRender
@@ -149,6 +148,7 @@ function App() {
               <Home
                 font={font}
                 colorScheme={colorScheme}
+                designIndex={randomWebTemp}
                 handleFontChange={() => {
                   setChangeFont(true);
                 }}
@@ -169,7 +169,7 @@ function App() {
               <Contact />
             </Route>
             <Route path="/prototype/layout">
-              <Layout />
+              <Layout windowWidth={windowWidth} />
             </Route>
             <Route path="/prototype/font">
               <Font />

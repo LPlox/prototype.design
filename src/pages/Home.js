@@ -8,6 +8,7 @@ import GeneratedInfo from "../components/GeneratedInfo";
 function Home({
   font,
   colorScheme,
+  designIndex,
   handleColorChange,
   handleFontChange,
   renderWebDesign,
@@ -75,6 +76,7 @@ function Home({
         <GeneratedDesign
           font={font}
           colorScheme={colorScheme}
+          designIndex={designIndex}
           handleFontChange={handleFontChange}
           handleColorChange={handleColorChange}
           renderWebDesign={renderWebDesign}

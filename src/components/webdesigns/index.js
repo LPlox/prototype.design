@@ -1,7 +1,7 @@
 let Web = {};
 
-Web["Web01"] = require("./Web01").default;
-// Web["Web02"] = require("./Web02").default;
-// Web["Web03"] = require("./Web03").default;
+Web["Web1"] = require("./Web1").default;
+Web["Web2"] = require("./Web2").default;
+Web["Web3"] = require("./Web3").default;
 
 export default Web;

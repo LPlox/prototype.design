@@ -1,0 +1,26 @@
+@import "root";
+
+.font {
+  @include grid-main-layout;
+
+  .font__header {
+    @include vertical-header;
+    grid-area: 2 / paddLeft / 6 / paddLeft;
+  }
+
+  .font__info {
+    grid-area: 1 / paddLeft / 1 / paddLeft;
+
+    @include tablet-down {
+      font-size: 1rem;
+    }
+  }
+
+  .font__subheader {
+    grid-area: 1 / grid1 / 1 / grid12;
+  }
+
+  .font__desc {
+    grid-area: 2 / grid1 / 2 / grid12;
+  }
+}

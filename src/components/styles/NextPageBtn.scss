@@ -1,0 +1,19 @@
+@import "root";
+
+.next-btn {
+  @include blue-btn;
+  width: 80px;
+  height: 80px;
+  font-size: 30px;
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  position: fixed;
+
+  @include tablet-down {
+    width: 50px;
+    height: 50px;
+    right: 10px;
+    bottom: 10px;
+  }
+}

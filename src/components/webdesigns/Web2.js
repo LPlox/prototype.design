@@ -4,7 +4,7 @@ import GenSubHeader from "./GenSubHeader";
 import GenBodyText from "./GenBodyText";
 import "./styles/web01.scss";
 
-function Web02({ header, subheader, body, colorScheme }) {
+function Web02({ header, subheader, body, colorScheme, fontMultiplier }) {
   return (
     <div
       className="website-temp"
@@ -14,15 +14,23 @@ function Web02({ header, subheader, body, colorScheme }) {
         <GenTitle
           className="temp-title"
           font={header.font}
-          size={header.size}
+          size={
+            fontMultiplier
+              ? header.size * fontMultiplier + "em"
+              : header.size + "em"
+          }
           weight={header.weight}
           color={colorScheme ? colorScheme[4] : ""}
-          content={header.font.toString() + " 01"}
+          content={header.font.toString() + " 02"}
         />
         <GenSubHeader
           className="temp-subheader"
           font={subheader.font}
-          size={subheader.size}
+          size={
+            fontMultiplier
+              ? subheader.size * fontMultiplier + "em"
+              : subheader.size + "em"
+          }
           weight={subheader.weight}
           color={colorScheme ? colorScheme[4] : ""}
           content={subheader.font.toString()}
@@ -30,7 +38,11 @@ function Web02({ header, subheader, body, colorScheme }) {
         <GenBodyText
           className="temp-body"
           font={body.font}
-          size={body.size}
+          size={
+            fontMultiplier
+              ? body.size * fontMultiplier + "em"
+              : body.size + "em"
+          }
           weight={body.weight}
           color={colorScheme ? colorScheme[4] : ""}
           content={

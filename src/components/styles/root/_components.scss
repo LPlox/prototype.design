@@ -25,3 +25,13 @@
     outline: 2px solid $primary-color;
   }
 }
+
+@mixin blue-btn {
+  background-color: $button-color;
+  color: $secondary-text-color;
+  border: none;
+  text-decoration: none;
+  &:focus {
+    outline: 2px solid $primary-color;
+  }
+}

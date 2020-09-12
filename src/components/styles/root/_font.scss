@@ -46,3 +46,10 @@ $body-text-height: 1.8;
   font-family: $special-font;
   font-size: 0.8rem;
 }
+
+@mixin vertical-header {
+  font-family: $secondary-font;
+  font-size: $header-size;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+}

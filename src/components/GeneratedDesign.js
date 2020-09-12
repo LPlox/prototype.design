@@ -4,6 +4,7 @@ import "./styles/GeneratedDesign.scss";
 function GeneratedDesign({
   font,
   colorScheme,
+  designIndex,
   handleFontChange,
   handleColorChange,
   renderWebDesign,
@@ -13,7 +14,7 @@ function GeneratedDesign({
 }) {
   return (
     <div className="generated__render" style={divStyle}>
-      {font ? renderWebDesign() : null}
+      {font ? renderWebDesign(designIndex) : null}
     </div>
   );
 }

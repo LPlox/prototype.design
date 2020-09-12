@@ -14,7 +14,7 @@ function Nav() {
       <nav className="nav">
         <div className="logo">
           <Link to="/">
-            <img className="logo__img" src="logo.png" alt="logo" />
+            <img className="logo__img" src="/logo.png" alt="logo" />
           </Link>
         </div>
         <ul className="nav__links">
