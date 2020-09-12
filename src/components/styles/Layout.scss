@@ -67,9 +67,9 @@
     ul {
       li {
         list-style: none;
-      }
-      &:first-child {
-        font-weight: bold;
+        &:first-child {
+          font-weight: bold;
+        }
       }
     }
   }

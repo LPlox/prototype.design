@@ -23,7 +23,7 @@ function App() {
   const [colorScheme, setColorScheme] = useState();
   const [font, setFont] = useState();
   const [windowWidth, setWindowWidth] = useState();
-  const [randomWebTemp, setRandomWebTemp] = useState(
+  const [webTemp, setWebTemp] = useState(
     Math.floor(Math.random() * Math.floor(3)) + 1
   );
 
@@ -43,10 +43,19 @@ function App() {
         subheader={font.subheader}
         body={font.body}
         colorScheme={colorScheme}
+        divHeight="60%"
         fontMultiplier={fontMultiplier}
       />
     );
   }
+
+  useEffect(() => {
+    console.log(colorScheme);
+  }, [colorScheme]);
+
+  useEffect(() => {
+    console.log("webtemp " + webTemp);
+  }, [webTemp]);
 
   useEffect(() => {
     if (windowWidth) {
@@ -60,7 +69,7 @@ function App() {
 
   useEffect(() => {
     if (changeWebTemp)
-      setRandomWebTemp(Math.floor(Math.random() * Math.floor(3)) + 1);
+      setWebTemp(Math.floor(Math.random() * Math.floor(3)) + 1);
     setChangeWebTemp(false);
     //Should randomize until its not the same one...
   }, [changeWebTemp]);
@@ -115,6 +124,7 @@ function App() {
             `${font.body.font}: ${font.body.weight ? font.body.weight : 400}`,
           ],
         },
+        classes: false,
       });
       console.log(
         `${font.header.font}: ${font.header.weight ? font.header.weight : 400}`,
@@ -148,7 +158,7 @@ function App() {
               <Home
                 font={font}
                 colorScheme={colorScheme}
-                designIndex={randomWebTemp}
+                designIndex={webTemp}
                 handleFontChange={() => {
                   setChangeFont(true);
                 }}
@@ -169,10 +179,16 @@ function App() {
               <Contact />
             </Route>
             <Route path="/prototype/layout">
-              <Layout windowWidth={windowWidth} />
+              <Layout windowWidth={windowWidth} setWebTemp={setWebTemp} />
             </Route>
             <Route path="/prototype/font">
-              <Font />
+              <Font
+                windowWidth={windowWidth}
+                fontData={fontData}
+                font={font}
+                setFont={setFont}
+                fontMultiplier={fontMultiplier}
+              />
             </Route>
             <Route path="/prototype/color">
               <Color />

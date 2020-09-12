@@ -5,10 +5,12 @@
   width: 80px;
   height: 80px;
   font-size: 30px;
-  position: absolute;
   right: 30px;
   bottom: 30px;
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @include tablet-down {
     width: 50px;

@@ -1,0 +1,8 @@
+@import "root";
+
+.font-display {
+  width: 36vh;
+
+  @include tablet-down {
+  }
+}

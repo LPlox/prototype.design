@@ -4,11 +4,22 @@ import GenSubHeader from "./GenSubHeader";
 import GenBodyText from "./GenBodyText";
 import "./styles/web01.scss";
 
-function Web01({ header, subheader, body, colorScheme, fontMultiplier }) {
+function Web01({
+  header,
+  subheader,
+  body,
+  colorScheme,
+  divHeight,
+  fontMultiplier,
+}) {
   return (
     <div
       className="website-temp"
-      style={colorScheme ? { backgroundColor: colorScheme[0] } : null}
+      style={
+        colorScheme
+          ? { backgroundColor: colorScheme[0], height: divHeight }
+          : { height: divHeight }
+      }
     >
       <div className="content-temp">
         <GenTitle

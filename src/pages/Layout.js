@@ -1,19 +1,31 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import Webdesigns from "../components/webdesigns";
 import GeneratedDesign from "../components/GeneratedDesign";
 import "../components/styles/Layout.scss";
 import NextPageBtn from "../components/NextPageBtn";
 import InfoBtn from "../components/InfoBtn";
 
-function Layout({ windowWidth }) {
+function Layout({ windowWidth, setWebTemp }) {
+  const [next, setNext] = useState(false);
+  const [checked, setChecked] = useState();
   const websites = [1, 2, 3];
+
+  const handleClick = (e, i) => {
+    e.preventDefault();
+    setWebTemp(i);
+    setChecked(i);
+  };
+
+  useEffect(() => {
+    if (checked) setNext(true);
+  }, [checked]);
+
   const colorSchemeTemp = [
-    "#F2F2EF",
-    "#9C9D9B",
-    "#7B7B80",
-    "#888E91",
-    "#27262D",
+    "#f3f3ef",
+    "#9c9d9b",
+    "#7b7b80",
+    "#808391",
+    "#292b34",
   ];
 
   const fontTemp = {
@@ -48,6 +60,7 @@ function Layout({ windowWidth }) {
         subheader={fontTemp.subheader}
         body={fontTemp.body}
         colorScheme={colorSchemeTemp}
+        divHeight="80%"
         fontMultiplier={1}
       />
     );
@@ -83,35 +96,45 @@ function Layout({ windowWidth }) {
       </div>
       {websites.map((i) => {
         let gridOrder, webHeight;
-
-        if (windowWidth > 768) {
-          gridOrder = i % 2 === 0 ? "grid7 / grid12" : "grid1 / grid6";
-          webHeight = "50vh";
-        } else {
+        if (windowWidth < 468) {
           gridOrder = "grid1 / grid12";
-          webHeight = "46vh";
+          webHeight = "26vh";
+        } else if (windowWidth > 468 && windowWidth < 768) {
+          gridOrder = "grid1 / grid12";
+          webHeight = "38vh";
+        } else {
+          gridOrder = i % 2 === 0 ? "grid7 / grid12" : "grid1 / grid6";
+          webHeight = "38vh";
         }
-        const renderStyle = {
-          width: "100%",
-          height: webHeight,
-          backgroundColor: colorSchemeTemp[0],
+        const divStyle = {
           gridColumn: gridOrder,
-          display: "inline",
+          cursor: "pointer",
+        };
+
+        const renderStyle = {
+          paddingTop: "0.1%",
+          backgroundColor: colorSchemeTemp[2],
+          height: webHeight,
+        };
+
+        const checkedStyle = {
+          paddingTop: "0.1%",
+          backgroundColor: colorSchemeTemp[4],
+          height: webHeight,
         };
 
         return (
-          <GeneratedDesign
-            key={i}
-            font={fontTemp}
-            designIndex={i}
-            renderWebDesign={WebDesignTemp}
-            divStyle={renderStyle}
-          />
+          <div key={i} style={divStyle} onClick={(e) => handleClick(e, i)}>
+            <GeneratedDesign
+              font={fontTemp}
+              designIndex={i}
+              renderWebDesign={WebDesignTemp}
+              divStyle={checked === i ? checkedStyle : renderStyle}
+            />
+          </div>
         );
       })}
-      <Link to="/prototype/font">
-        <NextPageBtn />
-      </Link>
+      {next ? <NextPageBtn linkTo={"/prototype/font"} /> : null}
     </section>
   );
 }

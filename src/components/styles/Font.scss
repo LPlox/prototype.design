@@ -2,25 +2,75 @@
 
 .font {
   @include grid-main-layout;
+  padding-top: 4vh;
+
+  .font__deco {
+    grid-area: 1 / paddLeft / 1 / paddLeft;
+    color: black;
+    font-weight: bold;
+    @include default-body;
+    width: 100%;
+    text-align: right;
+    @include tablet-down {
+      display: none;
+    }
+  }
+
+  .font__links {
+    @include default-body;
+    font-weight: bold;
+    grid-area: 1 / grid1 / 1 / grid12;
+    padding-bottom: 4vh;
+    color: $primary-color;
+
+    .font__links--deactivate {
+      color: $deactivative;
+    }
+  }
 
   .font__header {
     @include vertical-header;
     grid-area: 2 / paddLeft / 6 / paddLeft;
-  }
-
-  .font__info {
-    grid-area: 1 / paddLeft / 1 / paddLeft;
+    padding-top: 70px;
 
     @include tablet-down {
+      grid-area: 1 / paddLeft / 6 / paddLeft;
       font-size: 1rem;
     }
   }
 
-  .font__subheader {
-    grid-area: 1 / grid1 / 1 / grid12;
+  .font__info {
+    grid-area: 2 / grid1 / 2 / grid8;
+
+    .font__subheader {
+      @include default-subheader;
+    }
+
+    .font__desc {
+      @include default-body;
+      padding: 10px 0;
+    }
+
+    @include tablet-down {
+      grid-area: 2 / grid1 / 2 / grid12;
+    }
   }
 
-  .font__desc {
-    grid-area: 2 / grid1 / 2 / grid12;
+  .font__keywords {
+    @include default-body;
+    grid-area: 2 / grid10 / 2 / grid12;
+
+    @include tablet-down {
+      display: none;
+    }
+
+    ul {
+      li {
+        list-style: none;
+        &:first-child {
+          font-weight: bold;
+        }
+      }
+    }
   }
 }
