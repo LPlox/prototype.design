@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/FontDisplay.scss";
 import WebfontLoader from "@dr-kobros/react-webfont-loader";
-const WebFont = require("webfontloader");
+// const WebFont = require("webfontloader");
 
 function FontDisplay({ font, divStyle, fontMultiplier }) {
   // if (font) {

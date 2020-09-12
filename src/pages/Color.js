@@ -4,7 +4,7 @@ import NextPageBtn from "../components/NextPageBtn";
 import InfoBtn from "../components/InfoBtn";
 
 function Color() {
-  const [next, setNext] = useState(false);
+  const [next] = useState(false);
   // const [checked, setChecked] = useState();
   // const [colorArray,setColorArray] = useState()
 
