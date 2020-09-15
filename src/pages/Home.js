@@ -14,6 +14,7 @@ function Home({
   renderWebDesign,
   handleWebTempChange,
   windowWidth,
+  setRandom,
 }) {
   const renderStyle = {
     width: "100%",
@@ -47,7 +48,7 @@ function Home({
           come to life.
         </h2>
         <div className="title__cta">
-          <Link to="/prototype/layout">
+          <Link to="/prototype/layout" onClick={() => setRandom(false)}>
             <button className="cta__btn">
               <p>Start Prototyping</p>
             </button>

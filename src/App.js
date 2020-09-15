@@ -32,6 +32,7 @@ function App() {
   const [changeFont, setChangeFont] = useState(false);
   const [changeColor, setChangeColor] = useState(true);
   const [changeWebTemp, setChangeWebTemp] = useState(false);
+  const [random, setRandom] = useState(true);
 
   //Render a website template
   function renderWebDesign(num) {
@@ -77,7 +78,7 @@ function App() {
   // Fetch a new color scheme
   useEffect(() => {
     if (changeColor) {
-      fetch("https://cors-anywhere.herokuapp.com/http://colormind.io/api/", {
+      fetch("http://colormind.io/api/", {
         method: "POST",
         body: JSON.stringify({ model: "ui" }),
       })
@@ -90,11 +91,20 @@ function App() {
       setChangeColor(false);
     }
 
+    function componentToHex(c) {
+      var hex = c.toString(16);
+      return hex.length === 1 ? "0" + hex : hex;
+    }
+
+    function rgbToHex(r, g, b) {
+      return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+    }
+
     function rawToRBG(arr) {
-      const newRGB = arr.map((colorNum) => {
-        return "rgb(" + colorNum.join() + ")";
-      });
-      return newRGB;
+      const hexColor = arr.map((color) =>
+        rgbToHex(color[0], color[1], color[2])
+      );
+      return hexColor;
     }
   }, [changeColor]);
 
@@ -160,16 +170,17 @@ function App() {
                 colorScheme={colorScheme}
                 designIndex={webTemp}
                 handleFontChange={() => {
-                  setChangeFont(true);
+                  if (random) setChangeFont(true);
                 }}
                 handleColorChange={() => {
-                  setChangeColor(true);
+                  if (random) setChangeColor(true);
                 }}
                 renderWebDesign={renderWebDesign}
                 handleWebTempChange={() => {
-                  setChangeWebTemp(true);
+                  if (random) setChangeWebTemp(true);
                 }}
                 windowWidth={windowWidth}
+                setRandom={setRandom}
               />
             </Route>
             <Route path="/resources">
@@ -191,7 +202,13 @@ function App() {
               />
             </Route>
             <Route path="/prototype/color">
-              <Color />
+              <Color
+                font={font}
+                setColorScheme={setColorScheme}
+                designIndex={webTemp}
+                renderWebDesign={renderWebDesign}
+                windowWidth={windowWidth}
+              />
             </Route>
             <Route path="/prototype/render">
               <Render />

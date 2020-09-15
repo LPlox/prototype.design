@@ -3,14 +3,14 @@ import "./styles/GeneratedInfo.scss";
 import { v4 as uuidv4 } from "uuid";
 
 function GeneratedInfo({ font, colorScheme, theme, divStyle, windowWidth }) {
-  function componentToHex(c) {
-    var hex = c.toString(16);
-    return hex.length === 1 ? "0" + hex : hex;
-  }
+  // function componentToHex(c) {
+  //   var hex = c.toString(16);
+  //   return hex.length === 1 ? "0" + hex : hex;
+  // }
 
-  function rgbToHex(r, g, b) {
-    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-  }
+  // function rgbToHex(r, g, b) {
+  //   return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+  // }
 
   return (
     <div className="generated__info" style={divStyle}>
@@ -51,19 +51,9 @@ function GeneratedInfo({ font, colorScheme, theme, divStyle, windowWidth }) {
               fontSize: windowWidth > 768 ? "0.8rem" : "0.4rem",
             };
 
-            const str = color.slice(4);
-            const str1 = str.slice(0, -1);
-            const hexArray = str1.split(",");
-
             return (
               <div key={uuidv4()} style={divStyle}>
-                <p style={textStyle}>
-                  {rgbToHex(
-                    parseInt(hexArray[0]),
-                    parseInt(hexArray[1]),
-                    parseInt(hexArray[2])
-                  )}
-                </p>
+                <p style={textStyle}>{color}</p>
               </div>
             );
           })

@@ -4,7 +4,7 @@ import NextPageBtn from "../components/NextPageBtn";
 import InfoBtn from "../components/InfoBtn";
 import FontDisplay from "../components/FontDisplay";
 
-function Font({ windowWidth, fontData, font, setFont, fontMultiplier }) {
+function Font({ windowWidth, fontData, setFont, fontMultiplier }) {
   const [next, setNext] = useState(false);
   const [checked, setChecked] = useState();
   let bgIndex = 0;
