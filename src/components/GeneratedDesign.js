@@ -5,12 +5,8 @@ function GeneratedDesign({
   font,
   colorScheme,
   designIndex,
-  handleFontChange,
-  handleColorChange,
   renderWebDesign,
-  handleWebTempChange,
   divStyle,
-  windowWidth,
 }) {
   return (
     <div className="generated__render" style={divStyle}>

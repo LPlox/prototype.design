@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Webdesigns from "../components/webdesigns";
 import GeneratedDesign from "../components/GeneratedDesign";
-import "../components/styles/Layout.scss";
+import "../components/styles/ProtoPage.scss";
 import NextPageBtn from "../components/NextPageBtn";
 import InfoBtn from "../components/InfoBtn";
 
@@ -67,19 +67,19 @@ function Layout({ windowWidth, setWebTemp }) {
   }
 
   return (
-    <section className="layout">
-      <p className="layout__deco">20.821.001</p>
-      <p className="layout__links">
+    <section className="proto">
+      <p className="proto__deco">20.821.001</p>
+      <p className="proto__links">
         Layout &gt;{" "}
-        <span className="layout__links--deactivate">
+        <span className="proto__links--deactivate">
           Fonts &gt; Colors &gt; Render
         </span>
       </p>
-      <h1 className="layout__header">GENERATE WEBSITE LAYOUT</h1>
+      <h1 className="proto__header">GENERATE WEBSITE LAYOUT</h1>
       <InfoBtn />
-      <div className="layout__info">
-        <h2 className="layout__subheader">CHOOSE A WEBSITE LAYOUT</h2>
-        <p className="layout__desc">
+      <div className="proto__info">
+        <h2 className="proto__subheader">CHOOSE A WEBSITE LAYOUT</h2>
+        <p className="proto__desc">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -89,7 +89,7 @@ function Layout({ windowWidth, setWebTemp }) {
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
-      <div className="layout__keywords">
+      <div className="proto__keywords">
         <ul>
           <li>Keywords</li>
         </ul>

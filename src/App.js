@@ -211,7 +211,12 @@ function App() {
               />
             </Route>
             <Route path="/prototype/render">
-              <Render />
+              <Render
+                font={font}
+                colorScheme={colorScheme}
+                designIndex={webTemp}
+                renderWebDesign={renderWebDesign}
+              />
             </Route>
           </Switch>
         </Suspense>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../components/styles/Color.scss";
+import "../components/styles/ProtoPage.scss";
 import NextPageBtn from "../components/NextPageBtn";
 import InfoBtn from "../components/InfoBtn";
 import colorData from "../components/data/colorSchemes.json";
@@ -9,7 +9,7 @@ const ColorDisplay = React.lazy(() => import("../components/ColorDisplay"));
 function Color({ font, setColorScheme, designIndex, windowWidth }) {
   const [next, setNext] = useState(false);
   const [colorArray, setColorArray] = useState([]); //generated colorschemes from api
-  const [isFetching, setIsFetching] = useState(false); //reaches the end of component
+  const [isFetching, setIsFetching] = useState(true); //reaches the end of component
   const [checked, setChecked] = useState();
 
   const handleClick = (e, index, color) => {
@@ -20,9 +20,30 @@ function Color({ font, setColorScheme, designIndex, windowWidth }) {
   };
 
   useEffect(() => {
-    setIsFetching(true);
     window.addEventListener("scroll", handleScroll); //listening to scroll
   }, []);
+
+  const handleScroll = () => {
+    if (
+      Math.ceil(window.innerHeight + document.documentElement.scrollTop + 500) >
+      document.documentElement.offsetHeight
+    ) {
+      setIsFetching(true);
+    }
+  };
+
+  useEffect(() => {
+    if (isFetching) {
+      fetch(
+        "https://cors-anywhere.herokuapp.com/http://colormind.io/api/"
+      ).then((response) => {
+        if (response.ok) fetchColor();
+        else fetchFromArray();
+      });
+
+      setIsFetching(false);
+    }
+  }, [isFetching, next]);
 
   const fetchColor = async () => {
     setTimeout(async () => {
@@ -32,7 +53,19 @@ function Color({ font, setColorScheme, designIndex, windowWidth }) {
           method: "POST",
           body: JSON.stringify({ model: "ui" }),
         }
-      );
+      )
+        .then((response) => {
+          if (response.ok) {
+            console.log("response.ok");
+            return response;
+          } else {
+            console.log("response not ok");
+          }
+        })
+        .catch(() => {
+          console.log("response not ok catched");
+        });
+
       const data = await result.json();
       const rawColorArrayObject = Object.values(data.result);
       const colorScheme = rawToRBG(rawColorArrayObject);
@@ -54,48 +87,32 @@ function Color({ font, setColorScheme, designIndex, windowWidth }) {
       );
       return hexColor;
     }
-
-    // setTimeout(async () => {
-    //   setColorArray((color) => [
-    //     ...color,
-    //     colorData[Math.floor(Math.random() * Math.floor(50))],
-    //   ]);
-    // }, 1000);
   };
 
-  const handleScroll = () => {
-    if (
-      Math.ceil(window.innerHeight + document.documentElement.scrollTop + 500) >
-      document.documentElement.offsetHeight
-    ) {
-      setIsFetching(true);
-    }
+  const fetchFromArray = async () => {
+    setColorArray((color) => [
+      ...color,
+      colorData[Math.floor(Math.random() * Math.floor(colorData.length))],
+    ]);
   };
-
-  useEffect(() => {
-    if (isFetching) {
-      fetchColor();
-      setIsFetching(false);
-    }
-  }, [isFetching]);
 
   return (
-    <section className="color">
-      <p className="color__deco">20.821.001</p>
-      <p className="color__links">
+    <section className="proto">
+      <p className="proto__deco">20.821.001</p>
+      <p className="proto__links">
         Layout &gt; Fonts &gt; Colors &gt;{" "}
-        <span className="color__links--deactivate">Render</span>
+        <span className="proto__links--deactivate">Render</span>
       </p>
-      <h1 className="color__header">WEB UI COLOR SCHEME</h1>
+      <h1 className="proto__header">WEB UI COLOR SCHEME</h1>
       <InfoBtn />
-      <div className="color__info">
-        <h2 className="color__subheader">CHOOSE COLOR SCHEME</h2>
-        <p className="color__desc">
+      <div className="proto__info">
+        <h2 className="proto__subheader">CHOOSE COLOR SCHEME</h2>
+        <p className="proto__desc">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
-      <div className="color__keywords">
+      <div className="proto__keywords">
         <ul>
           <li>Keywords</li>
         </ul>
@@ -156,20 +173,9 @@ function Color({ font, setColorScheme, designIndex, windowWidth }) {
         <p>Loading...</p>
       )}
 
-      {/* {colorData ? (
-        <div style={divStyle}>
-          <ColorInfo
-            font={font}
-            colorScheme={colorData[3]}
-            theme={designIndex}
-            divStyle={renderInfoStyle}
-            windowWidth={windowWidth}
-          />
-        </div>
-      ) : null} */}
-
       {next ? <NextPageBtn linkTo={"/prototype/render"} /> : null}
       {isFetching && <h1>Loading more colors...</h1>}
+      <p>Loading...</p>
     </section>
   );
 }

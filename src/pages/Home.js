@@ -25,11 +25,14 @@ function Home({
   };
 
   const renderInfoStyle = {
+    display: "flex",
+    flexDirections: "row",
+    justifyContent: "space-between",
     color: colorScheme ? colorScheme[4] : "white",
     gridColumn: "grid1 / grid12",
     gridRow: "4",
     top: windowWidth > 768 ? "-24vh" : "-14vh",
-    marginLeft: "5%",
+    margin: "0 5%",
     height: "10px",
   };
 

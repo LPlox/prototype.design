@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../components/styles/Font.scss";
+import "../components/styles/ProtoPage.scss";
 import NextPageBtn from "../components/NextPageBtn";
 import InfoBtn from "../components/InfoBtn";
 import FontDisplay from "../components/FontDisplay";
@@ -31,22 +31,22 @@ function Font({ windowWidth, fontData, setFont, fontMultiplier }) {
   }, [checked]);
 
   return (
-    <section className="font">
-      <p className="font__deco">20.821.001</p>
-      <p className="font__links">
+    <section className="proto">
+      <p className="proto__deco">20.821.001</p>
+      <p className="proto__links">
         Layout &gt; Fonts &gt;{" "}
-        <span className="font__links--deactivate">Colors &gt; Render</span>
+        <span className="proto__links--deactivate">Colors &gt; Render</span>
       </p>
-      <h1 className="font__header">FONT COMBINATIONS</h1>
+      <h1 className="proto__header">FONT COMBINATIONS</h1>
       <InfoBtn />
-      <div className="font__info">
-        <h2 className="font__subheader">CHOOSE A FONT SET</h2>
-        <p className="font__desc">
+      <div className="proto__info">
+        <h2 className="proto__subheader">CHOOSE A FONT SET</h2>
+        <p className="proto__desc">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
-      <div className="font__keywords">
+      <div className="proto__keywords">
         <ul>
           <li>Keywords</li>
           <li>Kerning</li>

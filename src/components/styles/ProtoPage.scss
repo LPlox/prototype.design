@@ -1,10 +1,10 @@
 @import "root";
 
-.layout {
+.proto {
   @include grid-main-layout;
   padding-top: 4vh;
 
-  .layout__deco {
+  .proto__deco {
     grid-area: 1 / paddLeft / 1 / paddLeft;
     color: black;
     font-weight: bold;
@@ -16,19 +16,19 @@
     }
   }
 
-  .layout__links {
+  .proto__links {
     @include default-body;
     font-weight: bold;
     grid-area: 1 / grid1 / 1 / grid12;
     padding-bottom: 4vh;
     color: $primary-color;
 
-    .layout__links--deactivate {
+    .proto__links--deactivate {
       color: $deactivative;
     }
   }
 
-  .layout__header {
+  .proto__header {
     @include vertical-header;
     grid-area: 2 / paddLeft / 6 / paddLeft;
     padding-top: 70px;
@@ -39,14 +39,14 @@
     }
   }
 
-  .layout__info {
+  .proto__info {
     grid-area: 2 / grid1 / 2 / grid8;
 
-    .layout__subheader {
+    .proto__subheader {
       @include default-subheader;
     }
 
-    .layout__desc {
+    .proto__desc {
       @include default-body;
       padding: 10px 0;
     }
@@ -56,7 +56,7 @@
     }
   }
 
-  .layout__keywords {
+  .proto__keywords {
     @include default-body;
     grid-area: 2 / grid10 / 2 / grid12;
 

@@ -8,8 +8,8 @@ function ColorDisplay({ font, colorScheme, theme, divStyle, windowWidth }) {
   const ComponentToRender = Webdesigns["Web" + theme];
 
   return (
-    <div className="generated__info" style={divStyle}>
-      <div className="generated__colors">
+    <div className="color-display__info" style={divStyle}>
+      <div className="color-display__colors">
         {colorScheme ? (
           colorScheme.map((color) => {
             const textStyle = {
