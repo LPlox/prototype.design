@@ -65,7 +65,7 @@ function Color({ font, setColorScheme, designIndex, windowWidth }) {
 
   const handleScroll = () => {
     if (
-      Math.ceil(window.innerHeight + document.documentElement.scrollTop + 100) >
+      Math.ceil(window.innerHeight + document.documentElement.scrollTop + 500) >
       document.documentElement.offsetHeight
     ) {
       setIsFetching(true);
