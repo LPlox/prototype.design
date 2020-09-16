@@ -26,10 +26,13 @@ function Color({ font, setColorScheme, designIndex, windowWidth }) {
 
   const fetchColor = async () => {
     setTimeout(async () => {
-      const result = await fetch("http://colormind.io/api/", {
-        method: "POST",
-        body: JSON.stringify({ model: "ui" }),
-      });
+      const result = await fetch(
+        "https://cors-anywhere.herokuapp.com/http://colormind.io/api/",
+        {
+          method: "POST",
+          body: JSON.stringify({ model: "ui" }),
+        }
+      );
       const data = await result.json();
       const rawColorArrayObject = Object.values(data.result);
       const colorScheme = rawToRBG(rawColorArrayObject);

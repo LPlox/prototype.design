@@ -78,7 +78,7 @@ function App() {
   // Fetch a new color scheme
   useEffect(() => {
     if (changeColor) {
-      fetch("http://colormind.io/api/", {
+      fetch("https://cors-anywhere.herokuapp.com/http://colormind.io/api/", {
         method: "POST",
         body: JSON.stringify({ model: "ui" }),
       })
