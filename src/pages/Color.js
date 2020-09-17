@@ -12,6 +12,10 @@ function Color({ font, setColorScheme, designIndex, windowWidth }) {
   const [isFetching, setIsFetching] = useState(true); //reaches the end of component
   const [checked, setChecked] = useState();
 
+  useEffect(() => {
+    console.log(colorArray);
+  }, [colorArray]);
+
   const handleClick = (e, index, color) => {
     e.preventDefault();
     setColorScheme(color);

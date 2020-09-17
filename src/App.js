@@ -13,6 +13,7 @@ const Layout = lazy(() => import("./pages/Layout"));
 const Font = lazy(() => import("./pages/Font"));
 const Color = lazy(() => import("./pages/Color"));
 const Render = lazy(() => import("./pages/Render"));
+const NoMatch = lazy(() => import("./pages/NoMatch"));
 const WebFont = require("webfontloader");
 
 function App() {
@@ -217,6 +218,9 @@ function App() {
                 designIndex={webTemp}
                 renderWebDesign={renderWebDesign}
               />
+            </Route>
+            <Route>
+              <NoMatch />
             </Route>
           </Switch>
         </Suspense>
