@@ -3,7 +3,13 @@ import "../components/styles/ProtoPage.scss";
 import InfoBtn from "../components/InfoBtn";
 import GeneratedDesign from "../components/GeneratedDesign";
 
-function Render({ font, colorScheme, designIndex, renderWebDesign }) {
+function Render({
+  font,
+  colorScheme,
+  designIndex,
+  fontMultiplier,
+  windowWidth,
+}) {
   const divStyle = {
     width: "100%",
     gridColumn: "grid2 / grid11",
@@ -12,11 +18,9 @@ function Render({ font, colorScheme, designIndex, renderWebDesign }) {
   const renderInfoStyle = {
     backgroundColor: colorScheme ? colorScheme[2] : "white",
     color: colorScheme ? colorScheme[4] : "black",
-    height: "70vh",
+    height: windowWidth > 768 ? "70vh" : "30vh",
     padding: "0.1px",
   };
-
-  console.log(font, colorScheme, designIndex, renderWebDesign);
 
   return (
     <div className="proto">
@@ -31,7 +35,8 @@ function Render({ font, colorScheme, designIndex, renderWebDesign }) {
             colorScheme={colorScheme}
             designIndex={designIndex}
             divStyle={renderInfoStyle}
-            renderWebDesign={renderWebDesign}
+            fontMultiplier={fontMultiplier}
+            divHeight={"80%"}
           />
         </div>
       ) : (

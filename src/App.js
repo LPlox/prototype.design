@@ -5,7 +5,6 @@ import "./App.scss";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import fontGenData from "./components/data/fontCombo.json";
-import Webdesigns from "./components/webdesigns";
 
 const Resources = lazy(() => import("./pages/Resources"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -34,22 +33,6 @@ function App() {
   const [changeColor, setChangeColor] = useState(true);
   const [changeWebTemp, setChangeWebTemp] = useState(false);
   const [random, setRandom] = useState(true);
-
-  //Render a website template
-  function renderWebDesign(num) {
-    const type = "Web" + num;
-    const ComponentToRender = Webdesigns[type];
-    return (
-      <ComponentToRender
-        header={font.header}
-        subheader={font.subheader}
-        body={font.body}
-        colorScheme={colorScheme}
-        divHeight="60%"
-        fontMultiplier={fontMultiplier}
-      />
-    );
-  }
 
   useEffect(() => {
     console.log(colorScheme);
@@ -176,12 +159,12 @@ function App() {
                 handleColorChange={() => {
                   if (random) setChangeColor(true);
                 }}
-                renderWebDesign={renderWebDesign}
                 handleWebTempChange={() => {
                   if (random) setChangeWebTemp(true);
                 }}
                 windowWidth={windowWidth}
                 setRandom={setRandom}
+                fontMultiplier={fontMultiplier}
               />
             </Route>
             <Route path="/resources">
@@ -207,7 +190,6 @@ function App() {
                 font={font}
                 setColorScheme={setColorScheme}
                 designIndex={webTemp}
-                renderWebDesign={renderWebDesign}
                 windowWidth={windowWidth}
               />
             </Route>
@@ -216,7 +198,8 @@ function App() {
                 font={font}
                 colorScheme={colorScheme}
                 designIndex={webTemp}
-                renderWebDesign={renderWebDesign}
+                fontMultiplier={fontMultiplier}
+                windowWidth={windowWidth}
               />
             </Route>
             <Route>

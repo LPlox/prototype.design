@@ -11,10 +11,11 @@ function Home({
   designIndex,
   handleColorChange,
   handleFontChange,
-  renderWebDesign,
   handleWebTempChange,
   windowWidth,
   setRandom,
+  fontMultiplier,
+  divHeight,
 }) {
   const renderStyle = {
     width: "100%",
@@ -83,10 +84,11 @@ function Home({
           designIndex={designIndex}
           handleFontChange={handleFontChange}
           handleColorChange={handleColorChange}
-          renderWebDesign={renderWebDesign}
           handleWebTempChange={handleWebTempChange}
           divStyle={renderStyle}
           windowWidth={windowWidth}
+          fontMultiplier={fontMultiplier}
+          divHeight={"60%"}
         />
         <GeneratedInfo
           font={font}

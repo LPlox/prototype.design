@@ -128,28 +128,29 @@ function Color({ font, setColorScheme, designIndex, windowWidth }) {
 
           if (windowWidth < 468) {
             gridOrder = "grid1 / grid12";
-            webHeight = "26vh";
+            webHeight = "30vh";
           } else if (windowWidth > 468 && windowWidth < 768) {
             gridOrder = "grid1 / grid12";
             webHeight = "50vh";
           } else {
             gridOrder = index % 2 === 0 ? "grid1 / grid6" : "grid7 / grid12";
-            webHeight = "50vh";
+            webHeight = "60vh";
           }
 
           const divStyle = {
-            width: "100%",
             gridColumn: gridOrder,
             cursor: "pointer",
-            height: webHeight,
+            overflow: "hidden",
           };
 
           const renderInfoStyle = {
+            height: webHeight,
             backgroundColor: colorData[3] ? colorData[3][0] : "white",
             color: colorData[3] ? colorData[3][4] : "white",
           };
 
           const checkedInfoStyle = {
+            height: webHeight,
             backgroundColor: colorData[3] ? colorData[3][0] : "white",
             color: colorData[3] ? colorData[3][4] : "white",
             border: "1px solid #E52222",
@@ -157,8 +158,8 @@ function Color({ font, setColorScheme, designIndex, windowWidth }) {
 
           return (
             <div
-              style={divStyle}
               key={index}
+              style={divStyle}
               onClick={(e) => handleClick(e, index, color)}
             >
               <ColorDisplay

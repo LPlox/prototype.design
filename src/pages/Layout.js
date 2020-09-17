@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Webdesigns from "../components/webdesigns";
 import GeneratedDesign from "../components/GeneratedDesign";
 import "../components/styles/ProtoPage.scss";
 import NextPageBtn from "../components/NextPageBtn";
@@ -50,21 +49,6 @@ function Layout({ windowWidth, setWebTemp }) {
       size: 0.4,
     },
   };
-
-  function WebDesignTemp(num) {
-    const type = "Web" + num;
-    const ComponentToRender = Webdesigns[type];
-    return (
-      <ComponentToRender
-        header={fontTemp.header}
-        subheader={fontTemp.subheader}
-        body={fontTemp.body}
-        colorScheme={colorSchemeTemp}
-        divHeight="80%"
-        fontMultiplier={1}
-      />
-    );
-  }
 
   return (
     <section className="proto">
@@ -127,9 +111,11 @@ function Layout({ windowWidth, setWebTemp }) {
           <div key={i} style={divStyle} onClick={(e) => handleClick(e, i)}>
             <GeneratedDesign
               font={fontTemp}
+              colorScheme={colorSchemeTemp}
               designIndex={i}
-              renderWebDesign={WebDesignTemp}
               divStyle={checked === i ? checkedStyle : renderStyle}
+              divHeight={"80%"}
+              fontMultiplier={1}
             />
           </div>
         );
