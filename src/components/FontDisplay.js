@@ -16,6 +16,7 @@ function FontDisplay({ font, divStyle, fontMultiplier }) {
           `${font.body.font}: ${font.body.weight ? font.body.weight : 400}`,
         ],
       },
+      classes: false,
     });
   }
 
