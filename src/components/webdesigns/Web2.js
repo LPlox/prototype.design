@@ -4,7 +4,7 @@ import GenSubHeader from "./GenSubHeader";
 import GenBodyText from "./GenBodyText";
 import "./styles/web01.scss";
 
-function Web2({ header, subheader, body, colorScheme, fontMultiplier = 2 }) {
+function Web2({ header, subheader, body, colorScheme, fontMultiplier = 1 }) {
   return (
     <div
       className="website-temp"
@@ -13,7 +13,6 @@ function Web2({ header, subheader, body, colorScheme, fontMultiplier = 2 }) {
           ? {
               backgroundColor: colorScheme[0],
               border: `2px solid ${colorScheme[2]}`,
-              borderRadius: "3px",
             }
           : {}
       }
@@ -22,7 +21,7 @@ function Web2({ header, subheader, body, colorScheme, fontMultiplier = 2 }) {
         <GenTitle
           className="temp-title"
           font={header.font}
-          size={fontMultiplier === 1 ? 3 * 0.5 + "vw" : "3vw"}
+          size={fontMultiplier ? 3 * fontMultiplier + "vw" : "3vw"}
           weight={header.weight}
           color={colorScheme ? colorScheme[4] : ""}
           content={header.font.toString() + " 02"}
@@ -30,7 +29,7 @@ function Web2({ header, subheader, body, colorScheme, fontMultiplier = 2 }) {
         <GenSubHeader
           className="temp-subheader"
           font={subheader.font}
-          size={fontMultiplier === 1 ? 3 * 0.5 + "vw" : "3vw"}
+          size={fontMultiplier ? 3 * fontMultiplier + "vw" : "3vw"}
           weight={subheader.weight}
           color={colorScheme ? colorScheme[4] : ""}
           content={subheader.font.toString()}
@@ -38,7 +37,7 @@ function Web2({ header, subheader, body, colorScheme, fontMultiplier = 2 }) {
         <GenBodyText
           className="temp-body"
           font={body.font}
-          size={fontMultiplier === 1 ? 3 * 0.5 + "vw" : "3vw"}
+          size={fontMultiplier ? 3 * fontMultiplier + "vw" : "3vw"}
           weight={body.weight}
           color={colorScheme ? colorScheme[4] : ""}
           content={

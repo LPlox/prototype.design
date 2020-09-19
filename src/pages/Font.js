@@ -4,7 +4,7 @@ import NextPageBtn from "../components/NextPageBtn";
 import InfoBtn from "../components/InfoBtn";
 import FontDisplay from "../components/FontDisplay";
 
-function Font({ windowWidth, fontData, setFont, fontMultiplier }) {
+function Font({ windowWidth, fontData, setFont }) {
   const [next, setNext] = useState(false);
   const [checked, setChecked] = useState();
   let bgIndex = 0;
@@ -108,7 +108,7 @@ function Font({ windowWidth, fontData, setFont, fontMultiplier }) {
                 <FontDisplay
                   font={font}
                   divStyle={checked === i ? checkedStyle : renderStyle}
-                  fontMultiplier={fontMultiplier}
+                  fontMultiplier={0.5}
                 />
               </div>
             );

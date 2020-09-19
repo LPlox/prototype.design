@@ -23,7 +23,7 @@ function ColorDisplay({ font, colorScheme, theme, divStyle, windowWidth }) {
           colorScheme={colorScheme}
           designIndex={theme}
           divStyle={{}}
-          fontMultiplier={1}
+          fontMultiplier={0.5}
         />
       </div>
       <div className="color-display__colors" style={{ height: "70px" }}>

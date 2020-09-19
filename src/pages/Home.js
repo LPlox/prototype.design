@@ -21,6 +21,9 @@ function Home({
     width: "100%",
     position: "relative",
     margin: "0 auto",
+    //Thicc border
+    // padding: "8% 10%",
+    // backgroundColor: colorScheme ? colorScheme[2] : "none",
   };
 
   const renderInfoStyle = {

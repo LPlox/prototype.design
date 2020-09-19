@@ -103,7 +103,7 @@ function Layout({ windowWidth, setWebTemp }) {
               colorScheme={colorSchemeTemp}
               designIndex={i}
               divStyle={checked === i ? checkedStyle : {}}
-              fontMultiplier={1}
+              fontMultiplier={0.5}
             />
           </div>
         );
