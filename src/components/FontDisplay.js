@@ -2,7 +2,7 @@ import React from "react";
 import "./styles/FontDisplay.scss";
 const WebFont = require("webfontloader");
 
-function FontDisplay({ font, divStyle, fontMultiplier }) {
+function FontDisplay({ font, divStyle }) {
   if (font) {
     WebFont.load({
       google: {
@@ -25,7 +25,7 @@ function FontDisplay({ font, divStyle, fontMultiplier }) {
       <h1
         style={{
           fontFamily: font.header.font,
-          fontSize: font.header.size * fontMultiplier + "em",
+          fontSize: "2.4rem",
           fontWeight: font.header.weight,
         }}
       >
@@ -34,7 +34,7 @@ function FontDisplay({ font, divStyle, fontMultiplier }) {
       <h2
         style={{
           fontFamily: font.subheader.font,
-          fontSize: font.subheader.size * fontMultiplier + "em",
+          fontSize: "1.6rem",
           fontWeight: font.subheader.weight,
         }}
       >
@@ -43,7 +43,7 @@ function FontDisplay({ font, divStyle, fontMultiplier }) {
       <p
         style={{
           fontFamily: font.body.font,
-          fontSize: font.body.size * fontMultiplier + "em",
+          fontSize: "1rem",
           fontWeight: font.body.weight,
         }}
       >
