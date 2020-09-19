@@ -108,7 +108,7 @@ function Font({ windowWidth, fontData, setFont }) {
                 <FontDisplay
                   font={font}
                   divStyle={checked === i ? checkedStyle : renderStyle}
-                  fontMultiplier={0.5}
+                  fontMultiplier={windowWidth > 768 ? 0.5 : 1}
                 />
               </div>
             );
