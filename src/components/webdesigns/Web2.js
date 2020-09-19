@@ -4,32 +4,25 @@ import GenSubHeader from "./GenSubHeader";
 import GenBodyText from "./GenBodyText";
 import "./styles/web01.scss";
 
-function Web02({
-  header,
-  subheader,
-  body,
-  colorScheme,
-  divHeight,
-  fontMultiplier,
-}) {
+function Web2({ header, subheader, body, colorScheme, fontMultiplier = 2 }) {
   return (
     <div
       className="website-temp"
       style={
         colorScheme
-          ? { backgroundColor: colorScheme[0], height: divHeight }
-          : { height: divHeight }
+          ? {
+              backgroundColor: colorScheme[0],
+              border: `2px solid ${colorScheme[2]}`,
+              borderRadius: "3px",
+            }
+          : {}
       }
     >
       <div className="content-temp">
         <GenTitle
           className="temp-title"
           font={header.font}
-          size={
-            fontMultiplier
-              ? header.size * fontMultiplier + "em"
-              : header.size + "em"
-          }
+          size={fontMultiplier === 1 ? 3 * 0.5 + "vw" : "3vw"}
           weight={header.weight}
           color={colorScheme ? colorScheme[4] : ""}
           content={header.font.toString() + " 02"}
@@ -37,11 +30,7 @@ function Web02({
         <GenSubHeader
           className="temp-subheader"
           font={subheader.font}
-          size={
-            fontMultiplier
-              ? subheader.size * fontMultiplier + "em"
-              : subheader.size + "em"
-          }
+          size={fontMultiplier === 1 ? 3 * 0.5 + "vw" : "3vw"}
           weight={subheader.weight}
           color={colorScheme ? colorScheme[4] : ""}
           content={subheader.font.toString()}
@@ -49,11 +38,7 @@ function Web02({
         <GenBodyText
           className="temp-body"
           font={body.font}
-          size={
-            fontMultiplier
-              ? body.size * fontMultiplier + "em"
-              : body.size + "em"
-          }
+          size={fontMultiplier === 1 ? 3 * 0.5 + "vw" : "3vw"}
           weight={body.weight}
           color={colorScheme ? colorScheme[4] : ""}
           content={
@@ -66,4 +51,4 @@ function Web02({
   );
 }
 
-export default Web02;
+export default Web2;

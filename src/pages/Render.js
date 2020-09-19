@@ -12,14 +12,14 @@ function Render({
 }) {
   const divStyle = {
     width: "100%",
-    gridColumn: "grid2 / grid11",
+    gridColumn: "grid1 / grid12",
   };
 
   const renderInfoStyle = {
-    backgroundColor: colorScheme ? colorScheme[2] : "white",
-    color: colorScheme ? colorScheme[4] : "black",
-    height: windowWidth > 768 ? "70vh" : "30vh",
-    padding: "0.1px",
+    // backgroundColor: colorScheme ? colorScheme[2] : "white",
+    // color: colorScheme ? colorScheme[4] : "black",
+    // height: windowWidth > 768 ? "70vh" : "30vh",
+    // padding: "0.1px",
   };
 
   return (

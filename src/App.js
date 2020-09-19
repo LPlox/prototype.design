@@ -5,6 +5,7 @@ import "./App.scss";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import fontGenData from "./components/data/fontCombo.json";
+import colorData from "./components/data/colorSchemes.json";
 
 const Resources = lazy(() => import("./pages/Resources"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -28,7 +29,6 @@ function App() {
   );
 
   //Change state of the font, color and webtempleta
-  const [fontMultiplier, setFontMultiplier] = useState(2);
   const [changeFont, setChangeFont] = useState(false);
   const [changeColor, setChangeColor] = useState(true);
   const [changeWebTemp, setChangeWebTemp] = useState(false);
@@ -43,16 +43,6 @@ function App() {
   }, [webTemp]);
 
   useEffect(() => {
-    if (windowWidth) {
-      if (windowWidth > 768) {
-        setFontMultiplier(2);
-      } else {
-        setFontMultiplier(1);
-      }
-    }
-  }, [windowWidth]);
-
-  useEffect(() => {
     if (changeWebTemp)
       setWebTemp(Math.floor(Math.random() * Math.floor(3)) + 1);
     setChangeWebTemp(false);
@@ -61,34 +51,41 @@ function App() {
 
   // Fetch a new color scheme
   useEffect(() => {
+    // if (changeColor) {
+    //   fetch("https://cors-anywhere.herokuapp.com/http://colormind.io/api/", {
+    //     method: "POST",
+    //     body: JSON.stringify({ model: "ui" }),
+    //   })
+    //     .then((response) => response.json())
+    //     .then((json) => {
+    //       const rawColorArrayObject = Object.values(json.result);
+    //       setColorScheme(rawToRBG(rawColorArrayObject));
+    //     })
+    //     .catch((error) => console.error(error));
+    //   setChangeColor(false);
+    // }
+
+    // function componentToHex(c) {
+    //   var hex = c.toString(16);
+    //   return hex.length === 1 ? "0" + hex : hex;
+    // }
+
+    // function rgbToHex(r, g, b) {
+    //   return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+    // }
+
+    // function rawToRBG(arr) {
+    //   const hexColor = arr.map((color) =>
+    //     rgbToHex(color[0], color[1], color[2])
+    //   );
+    //   return hexColor;
+    // }
+
     if (changeColor) {
-      fetch("https://cors-anywhere.herokuapp.com/http://colormind.io/api/", {
-        method: "POST",
-        body: JSON.stringify({ model: "ui" }),
-      })
-        .then((response) => response.json())
-        .then((json) => {
-          const rawColorArrayObject = Object.values(json.result);
-          setColorScheme(rawToRBG(rawColorArrayObject));
-        })
-        .catch((error) => console.error(error));
-      setChangeColor(false);
-    }
-
-    function componentToHex(c) {
-      var hex = c.toString(16);
-      return hex.length === 1 ? "0" + hex : hex;
-    }
-
-    function rgbToHex(r, g, b) {
-      return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-    }
-
-    function rawToRBG(arr) {
-      const hexColor = arr.map((color) =>
-        rgbToHex(color[0], color[1], color[2])
+      setColorScheme(
+        colorData[Math.floor(Math.random() * Math.floor(colorData.length))]
       );
-      return hexColor;
+      setChangeColor(false);
     }
   }, [changeColor]);
 
@@ -164,7 +161,6 @@ function App() {
                 }}
                 windowWidth={windowWidth}
                 setRandom={setRandom}
-                fontMultiplier={fontMultiplier}
               />
             </Route>
             <Route path="/resources">
@@ -182,7 +178,6 @@ function App() {
                 fontData={fontData}
                 font={font}
                 setFont={setFont}
-                fontMultiplier={fontMultiplier}
               />
             </Route>
             <Route path="/prototype/color">
@@ -198,7 +193,6 @@ function App() {
                 font={font}
                 colorScheme={colorScheme}
                 designIndex={webTemp}
-                fontMultiplier={fontMultiplier}
                 windowWidth={windowWidth}
               />
             </Route>

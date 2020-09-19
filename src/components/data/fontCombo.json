@@ -5,20 +5,17 @@
     "header": {
       "font": "Roboto",
       "weight": 400,
-      "style": "",
-      "size": 1
+      "style": ""
     },
     "subheader": {
       "font": "Roboto Light Italic",
       "weight": 100,
-      "style": "italic",
-      "size": 0.6
+      "style": "italic"
     },
     "body": {
       "font": "Roboto Light",
       "weight": 100,
-      "style": "",
-      "size": 0.4
+      "style": ""
     }
   },
   {
@@ -27,20 +24,17 @@
     "header": {
       "font": "Oswald",
       "weight": 400,
-      "style": "",
-      "size": 1
+      "style": ""
     },
     "subheader": {
       "font": "EB Garamond",
       "weight": 100,
-      "style": "",
-      "size": 0.6
+      "style": ""
     },
     "body": {
       "font": "EB Garamond",
       "weight": 100,
-      "style": "",
-      "size": 0.4
+      "style": ""
     }
   },
   {
@@ -49,20 +43,17 @@
     "header": {
       "font": "Rufina",
       "weight": 400,
-      "style": "",
-      "size": 1
+      "style": ""
     },
     "subheader": {
       "font": "Sintony",
       "weight": 100,
-      "style": "",
-      "size": 0.6
+      "style": ""
     },
     "body": {
       "font": "Sintony",
       "weight": 100,
-      "style": "",
-      "size": 0.4
+      "style": ""
     }
   },
   {
@@ -71,20 +62,17 @@
     "header": {
       "font": "Crimson Text",
       "weight": 400,
-      "style": "",
-      "size": 1
+      "style": ""
     },
     "subheader": {
       "font": "Cardo",
       "weight": 100,
-      "style": "",
-      "size": 0.6
+      "style": ""
     },
     "body": {
       "font": "Cardo",
       "weight": 100,
-      "style": "",
-      "size": 0.4
+      "style": ""
     }
   },
   {
@@ -93,20 +81,17 @@
     "header": {
       "font": "Lora",
       "weight": 400,
-      "style": "",
-      "size": 1
+      "style": ""
     },
     "subheader": {
       "font": "Muli",
       "weight": 100,
-      "style": "",
-      "size": 0.6
+      "style": ""
     },
     "body": {
       "font": "Muli",
       "weight": 100,
-      "style": "",
-      "size": 0.4
+      "style": ""
     }
   },
   {
@@ -115,20 +100,17 @@
     "header": {
       "font": "Playfair Display",
       "weight": 400,
-      "style": "",
-      "size": 1
+      "style": ""
     },
     "subheader": {
       "font": "Karla",
       "weight": 100,
-      "style": "",
-      "size": 0.6
+      "style": ""
     },
     "body": {
       "font": "Karla",
       "weight": 100,
-      "style": "",
-      "size": 0.4
+      "style": ""
     }
   },
   {
@@ -137,20 +119,17 @@
     "header": {
       "font": "Julius Sans One",
       "weight": 400,
-      "style": "",
-      "size": 1
+      "style": ""
     },
     "subheader": {
       "font": "Crimson Text",
       "weight": 100,
-      "style": "",
-      "size": 0.6
+      "style": ""
     },
     "body": {
       "font": "Crimson Text",
       "weight": 100,
-      "style": "",
-      "size": 0.4
+      "style": ""
     }
   },
   {
@@ -159,20 +138,17 @@
     "header": {
       "font": "Quattrocento",
       "weight": 400,
-      "style": "",
-      "size": 1
+      "style": ""
     },
     "subheader": {
       "font": "Fanwood Text",
       "weight": 100,
-      "style": "",
-      "size": 0.6
+      "style": ""
     },
     "body": {
       "font": "Fanwood Text",
       "weight": 100,
-      "style": "",
-      "size": 0.4
+      "style": ""
     }
   },
   {
@@ -181,20 +157,17 @@
     "header": {
       "font": "Work Sans",
       "weight": 400,
-      "style": "",
-      "size": 1
+      "style": ""
     },
     "subheader": {
       "font": "Lato",
       "weight": 100,
-      "style": "",
-      "size": 0.6
+      "style": ""
     },
     "body": {
       "font": "Lato",
       "weight": 100,
-      "style": "",
-      "size": 0.4
+      "style": ""
     }
   }
 ]

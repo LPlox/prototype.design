@@ -89,13 +89,14 @@ function Font({ windowWidth, fontData, setFont, fontMultiplier }) {
               width: "100%",
               height: webHeight,
               backgroundColor: backgroundColor[bgIndex],
+              border: "3px solid #f5f5f5",
             };
 
             const checkedStyle = {
               width: "100%",
               height: webHeight,
-              border: "1px solid #E52222",
               backgroundColor: backgroundColor[bgIndex],
+              border: "3px solid #E52222",
             };
 
             return (

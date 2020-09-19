@@ -8,7 +8,6 @@ function GeneratedDesign({
   designIndex,
   divStyle,
   fontMultiplier,
-  divHeight,
 }) {
   function renderWebDesign(num) {
     const type = "Web" + num;
@@ -19,7 +18,6 @@ function GeneratedDesign({
         subheader={font.subheader}
         body={font.body}
         colorScheme={colorScheme}
-        divHeight={divHeight}
         fontMultiplier={fontMultiplier}
       />
     );
@@ -27,7 +25,18 @@ function GeneratedDesign({
 
   return (
     <div className="generated__render" style={divStyle}>
-      {font ? renderWebDesign(designIndex) : null}
+      <div
+        className="wrapper"
+        style={{
+          top: 0,
+          height: 0,
+          paddingBottom: "65%",
+          position: "relative",
+          width: "100%",
+        }}
+      >
+        {font ? renderWebDesign(designIndex) : null}
+      </div>
     </div>
   );
 }

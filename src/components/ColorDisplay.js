@@ -5,27 +5,27 @@ import "../components/styles/ColorInfo.scss";
 import GeneratedDesign from "./GeneratedDesign";
 
 function ColorDisplay({ font, colorScheme, theme, divStyle, windowWidth }) {
-  let webHeight, textDisplay;
+  let textDisplay;
 
   if (windowWidth < 468) {
     textDisplay = "none";
-    webHeight = "24vh";
   } else if (windowWidth > 468 && windowWidth < 768) {
     textDisplay = "block";
-    webHeight = "36vh";
   } else {
     textDisplay = "block";
-    webHeight = "50vh";
   }
-
-  const renderStyle = {
-    paddingTop: "0.1%",
-    backgroundColor: colorScheme[2],
-    height: webHeight,
-  };
 
   return (
     <div className="color-display__info" style={divStyle}>
+      <div className="theme-render">
+        <GeneratedDesign
+          font={font}
+          colorScheme={colorScheme}
+          designIndex={theme}
+          divStyle={{}}
+          fontMultiplier={1}
+        />
+      </div>
       <div className="color-display__colors" style={{ height: "70px" }}>
         {colorScheme ? (
           colorScheme.map((color) => {
@@ -41,7 +41,7 @@ function ColorDisplay({ font, colorScheme, theme, divStyle, windowWidth }) {
                 className="color-block"
                 style={{
                   background: `${color}`,
-                  height: "70px",
+                  height: "60px",
                 }}
               >
                 <p className="color__desc" style={textStyle}>
@@ -53,24 +53,6 @@ function ColorDisplay({ font, colorScheme, theme, divStyle, windowWidth }) {
         ) : (
           <p>Loading Colors...</p>
         )}
-      </div>
-      <div className="theme-render">
-        {/* <ComponentToRender
-          header={font.header}
-          subheader={font.subheader}
-          body={font.body}
-          colorScheme={colorScheme}
-          divHeight="100%"
-          fontMultiplier={windowWidth > 768 ? 2 : 1}
-        /> */}
-        <GeneratedDesign
-          font={font}
-          colorScheme={colorScheme}
-          designIndex={theme}
-          divStyle={renderStyle}
-          divHeight={"60%"}
-          fontMultiplier={1}
-        />
       </div>
     </div>
   );

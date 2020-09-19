@@ -3,15 +3,6 @@ import "./styles/GeneratedInfo.scss";
 import { v4 as uuidv4 } from "uuid";
 
 function GeneratedInfo({ font, colorScheme, theme, divStyle, windowWidth }) {
-  // function componentToHex(c) {
-  //   var hex = c.toString(16);
-  //   return hex.length === 1 ? "0" + hex : hex;
-  // }
-
-  // function rgbToHex(r, g, b) {
-  //   return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-  // }
-
   return (
     <div className="generated__info" style={divStyle}>
       <div className="generated__fonts">
@@ -39,15 +30,15 @@ function GeneratedInfo({ font, colorScheme, theme, divStyle, windowWidth }) {
             const divStyle = {
               background: `${color}`,
               display: "inline-block",
-              width: windowWidth > 768 ? "50px" : "20px",
-              height: windowWidth > 768 ? "50px" : "20px",
+              width: windowWidth > 768 ? "50px" : "30px",
+              height: windowWidth > 768 ? "50px" : "30px",
               border: "0.4px solid black",
               margin: "5px 5px",
             };
 
             const textStyle = {
               position: "relative",
-              top: windowWidth > 768 ? "50px" : "20px",
+              top: windowWidth > 768 ? "50px" : "30px",
               fontSize: windowWidth > 768 ? "0.8rem" : "0.4rem",
             };
 

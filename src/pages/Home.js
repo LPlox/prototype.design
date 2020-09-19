@@ -14,27 +14,27 @@ function Home({
   handleWebTempChange,
   windowWidth,
   setRandom,
-  fontMultiplier,
   divHeight,
 }) {
   const renderStyle = {
+    // height: windowWidth > 768 ? "90vh" : "40vh",
     width: "100%",
-    height: windowWidth > 768 ? "90vh" : "40vh",
-    backgroundColor: colorScheme ? colorScheme[2] : "grey",
-    gridColumn: "grid1 / grid12",
-    gridRow: "3",
+    position: "relative",
+    margin: "0 auto",
   };
 
   const renderInfoStyle = {
     display: "flex",
     flexDirections: "row",
     justifyContent: "space-between",
-    color: colorScheme ? colorScheme[4] : "white",
+    color: colorScheme ? colorScheme[4] : "black",
     gridColumn: "grid1 / grid12",
     gridRow: "4",
-    top: windowWidth > 768 ? "-24vh" : "-14vh",
-    margin: "0 5%",
-    height: "10px",
+    // top: windowWidth > 768 ? "-24vh" : "-14vh",
+    padding: "0 5%",
+    height: "auto",
+    width: "100%",
+    marginTop: "10vh",
   };
 
   return (
@@ -78,24 +78,31 @@ function Home({
           Try out design with 3 buttons. Take the design further or start
           Prototyping!
         </p>
-        <GeneratedDesign
-          font={font}
-          colorScheme={colorScheme}
-          designIndex={designIndex}
-          handleFontChange={handleFontChange}
-          handleColorChange={handleColorChange}
-          handleWebTempChange={handleWebTempChange}
-          divStyle={renderStyle}
-          windowWidth={windowWidth}
-          fontMultiplier={fontMultiplier}
-          divHeight={"60%"}
-        />
-        <GeneratedInfo
-          font={font}
-          colorScheme={colorScheme}
-          divStyle={renderInfoStyle}
-          windowWidth={windowWidth}
-        />
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            gridColumn: "grid1 / grid12",
+            gridRow: "3",
+          }}
+        >
+          <GeneratedDesign
+            font={font}
+            colorScheme={colorScheme}
+            designIndex={designIndex}
+            handleFontChange={handleFontChange}
+            handleColorChange={handleColorChange}
+            handleWebTempChange={handleWebTempChange}
+            divStyle={renderStyle}
+            windowWidth={windowWidth}
+          />
+          <GeneratedInfo
+            font={font}
+            colorScheme={colorScheme}
+            divStyle={renderInfoStyle}
+            windowWidth={windowWidth}
+          />
+        </div>
         <div className="generated-design__btns">
           <button className="generated-design__btn" onClick={handleColorChange}>
             Change Colors

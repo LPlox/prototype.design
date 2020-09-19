@@ -12,10 +12,6 @@ function Color({ font, setColorScheme, designIndex, windowWidth }) {
   const [isFetching, setIsFetching] = useState(true); //reaches the end of component
   const [checked, setChecked] = useState();
 
-  useEffect(() => {
-    console.log(colorArray);
-  }, [colorArray]);
-
   const handleClick = (e, index, color) => {
     e.preventDefault();
     setColorScheme(color);
@@ -37,67 +33,71 @@ function Color({ font, setColorScheme, designIndex, windowWidth }) {
   };
 
   useEffect(() => {
-    if (isFetching) {
-      fetch(
-        "https://cors-anywhere.herokuapp.com/http://colormind.io/api/"
-      ).then((response) => {
-        if (response.ok) fetchColor();
-        else fetchFromArray();
-      });
+    // if (isFetching) {
+    //   fetch(
+    //     "https://cors-anywhere.herokuapp.com/http://colormind.io/api/"
+    //   ).then((response) => {
+    //     if (response.ok) fetchColor();
+    //     else fetchFromArray();
+    //   });
 
-      setIsFetching(false);
-    }
+    //   setIsFetching(false);
+    // }
+    fetchFromArray();
   }, [isFetching, next]);
 
-  const fetchColor = async () => {
+  // const fetchColor = async () => {
+  //   setTimeout(async () => {
+  //     const result = await fetch(
+  //       "https://cors-anywhere.herokuapp.com/http://colormind.io/api/",
+  //       {
+  //         method: "POST",
+  //         body: JSON.stringify({ model: "ui" }),
+  //       }
+  //     )
+  //       .then((response) => {
+  //         if (response.ok) {
+  //           console.log("response.ok");
+  //           return response;
+  //         } else {
+  //           console.log("response not ok");
+  //         }
+  //       })
+  //       .catch(() => {
+  //         console.log("response not ok catched");
+  //       });
+
+  //     const data = await result.json();
+  //     const rawColorArrayObject = Object.values(data.result);
+  //     const colorScheme = rawToRBG(rawColorArrayObject);
+  //     setColorArray((colors) => [...colors, colorScheme]);
+  //   }, 1000);
+
+  //   function componentToHex(c) {
+  //     var hex = c.toString(16);
+  //     return hex.length === 1 ? "0" + hex : hex;
+  //   }
+
+  //   function rgbToHex(r, g, b) {
+  //     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+  //   }
+
+  //   function rawToRBG(arr) {
+  //     const hexColor = arr.map((color) =>
+  //       rgbToHex(color[0], color[1], color[2])
+  //     );
+  //     return hexColor;
+  //   }
+  // };
+
+  const fetchFromArray = () => {
     setTimeout(async () => {
-      const result = await fetch(
-        "https://cors-anywhere.herokuapp.com/http://colormind.io/api/",
-        {
-          method: "POST",
-          body: JSON.stringify({ model: "ui" }),
-        }
-      )
-        .then((response) => {
-          if (response.ok) {
-            console.log("response.ok");
-            return response;
-          } else {
-            console.log("response not ok");
-          }
-        })
-        .catch(() => {
-          console.log("response not ok catched");
-        });
-
-      const data = await result.json();
-      const rawColorArrayObject = Object.values(data.result);
-      const colorScheme = rawToRBG(rawColorArrayObject);
-      setColorArray((colors) => [...colors, colorScheme]);
+      setColorArray((color) => [
+        ...color,
+        colorData[Math.floor(Math.random() * Math.floor(colorData.length))],
+      ]);
     }, 1000);
-
-    function componentToHex(c) {
-      var hex = c.toString(16);
-      return hex.length === 1 ? "0" + hex : hex;
-    }
-
-    function rgbToHex(r, g, b) {
-      return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-    }
-
-    function rawToRBG(arr) {
-      const hexColor = arr.map((color) =>
-        rgbToHex(color[0], color[1], color[2])
-      );
-      return hexColor;
-    }
-  };
-
-  const fetchFromArray = async () => {
-    setColorArray((color) => [
-      ...color,
-      colorData[Math.floor(Math.random() * Math.floor(colorData.length))],
-    ]);
+    setIsFetching(false);
   };
 
   return (
@@ -124,36 +124,33 @@ function Color({ font, setColorScheme, designIndex, windowWidth }) {
 
       {colorArray ? (
         colorArray.map((color, index) => {
-          let gridOrder, webHeight;
+          let gridOrder;
 
           if (windowWidth < 468) {
             gridOrder = "grid1 / grid12";
-            webHeight = "30vh";
           } else if (windowWidth > 468 && windowWidth < 768) {
             gridOrder = "grid1 / grid12";
-            webHeight = "50vh";
           } else {
             gridOrder = index % 2 === 0 ? "grid1 / grid6" : "grid7 / grid12";
-            webHeight = "60vh";
           }
 
           const divStyle = {
             gridColumn: gridOrder,
             cursor: "pointer",
-            overflow: "hidden",
           };
 
           const renderInfoStyle = {
-            height: webHeight,
-            backgroundColor: colorData[3] ? colorData[3][0] : "white",
-            color: colorData[3] ? colorData[3][4] : "white",
+            // height: webHeight,
+            // backgroundColor: colorData[3] ? colorData[3][0] : "white",
+            // color: colorData[3] ? colorData[3][4] : "white",
+            border: "3px solid #f5f5f5",
           };
 
           const checkedInfoStyle = {
-            height: webHeight,
-            backgroundColor: colorData[3] ? colorData[3][0] : "white",
-            color: colorData[3] ? colorData[3][4] : "white",
-            border: "1px solid #E52222",
+            // height: webHeight,
+            // backgroundColor: colorData[3] ? colorData[3][0] : "white",
+            // color: colorData[3] ? colorData[3][4] : "white",
+            border: "3px solid #E52222",
           };
 
           return (
@@ -180,7 +177,6 @@ function Color({ font, setColorScheme, designIndex, windowWidth }) {
 
       {next ? <NextPageBtn linkTo={"/prototype/render"} /> : null}
       {isFetching && <h1>Loading more colors...</h1>}
-      <p>Loading...</p>
     </section>
   );
 }

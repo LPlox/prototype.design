@@ -4,32 +4,25 @@ import GenSubHeader from "./GenSubHeader";
 import GenBodyText from "./GenBodyText";
 import "./styles/web01.scss";
 
-function Web03({
-  header,
-  subheader,
-  body,
-  colorScheme,
-  divHeight,
-  fontMultiplier,
-}) {
+function Web3({ header, subheader, body, colorScheme, fontMultiplier = 2 }) {
   return (
     <div
       className="website-temp"
       style={
         colorScheme
-          ? { backgroundColor: colorScheme[0], height: divHeight }
-          : { height: divHeight }
+          ? {
+              backgroundColor: colorScheme[0],
+              border: `2px solid ${colorScheme[2]}`,
+              borderRadius: "3px",
+            }
+          : {}
       }
     >
       <div className="content-temp">
         <GenTitle
           className="temp-title"
           font={header.font}
-          size={
-            fontMultiplier
-              ? header.size * fontMultiplier + "em"
-              : header.size + "em"
-          }
+          size={fontMultiplier === 1 ? 2 * 0.5 + "vw" : "2vw"}
           weight={header.weight}
           color={colorScheme ? colorScheme[4] : ""}
           content={header.font.toString() + " 03"}
@@ -37,11 +30,7 @@ function Web03({
         <GenSubHeader
           className="temp-subheader"
           font={subheader.font}
-          size={
-            fontMultiplier
-              ? subheader.size * fontMultiplier + "em"
-              : subheader.size + "em"
-          }
+          size={fontMultiplier === 1 ? 3 * 0.5 + "vw" : "3vw"}
           weight={subheader.weight}
           color={colorScheme ? colorScheme[4] : ""}
           content={subheader.font.toString()}
@@ -49,11 +38,7 @@ function Web03({
         <GenBodyText
           className="temp-body"
           font={body.font}
-          size={
-            fontMultiplier
-              ? body.size * fontMultiplier + "em"
-              : body.size + "em"
-          }
+          size={fontMultiplier === 1 ? 3.2 * 0.5 + "vw" : "3.2vw"}
           weight={body.weight}
           color={colorScheme ? colorScheme[4] : ""}
           content={
@@ -66,4 +51,4 @@ function Web03({
   );
 }
 
-export default Web03;
+export default Web3;

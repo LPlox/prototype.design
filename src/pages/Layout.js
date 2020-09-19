@@ -79,32 +79,21 @@ function Layout({ windowWidth, setWebTemp }) {
         </ul>
       </div>
       {websites.map((i) => {
-        let gridOrder, webHeight;
+        let gridOrder;
         if (windowWidth < 468) {
           gridOrder = "grid1 / grid12";
-          webHeight = "26vh";
         } else if (windowWidth > 468 && windowWidth < 768) {
           gridOrder = "grid1 / grid12";
-          webHeight = "38vh";
         } else {
           gridOrder = i % 2 === 0 ? "grid7 / grid12" : "grid1 / grid6";
-          webHeight = "38vh";
         }
         const divStyle = {
           gridColumn: gridOrder,
           cursor: "pointer",
         };
 
-        const renderStyle = {
-          paddingTop: "0.1%",
-          backgroundColor: colorSchemeTemp[2],
-          height: webHeight,
-        };
-
         const checkedStyle = {
-          paddingTop: "0.1%",
-          backgroundColor: colorSchemeTemp[4],
-          height: webHeight,
+          filter: "invert(100%)",
         };
 
         return (
@@ -113,8 +102,7 @@ function Layout({ windowWidth, setWebTemp }) {
               font={fontTemp}
               colorScheme={colorSchemeTemp}
               designIndex={i}
-              divStyle={checked === i ? checkedStyle : renderStyle}
-              divHeight={"80%"}
+              divStyle={checked === i ? checkedStyle : {}}
               fontMultiplier={1}
             />
           </div>
