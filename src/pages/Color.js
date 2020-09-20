@@ -140,17 +140,11 @@ function Color({ font, setColorScheme, designIndex, windowWidth }) {
           };
 
           const renderInfoStyle = {
-            // height: webHeight,
-            // backgroundColor: colorData[3] ? colorData[3][0] : "white",
-            // color: colorData[3] ? colorData[3][4] : "white",
-            border: "3px solid #f5f5f5",
+            border: "14px solid #ffffff",
           };
 
           const checkedInfoStyle = {
-            // height: webHeight,
-            // backgroundColor: colorData[3] ? colorData[3][0] : "white",
-            // color: colorData[3] ? colorData[3][4] : "white",
-            border: "3px solid #E52222",
+            border: `14px solid ${color[2]}`,
           };
 
           return (
@@ -176,7 +170,7 @@ function Color({ font, setColorScheme, designIndex, windowWidth }) {
       )}
 
       {next ? <NextPageBtn linkTo={"/prototype/render"} /> : null}
-      {isFetching && <h1>Loading more colors...</h1>}
+      {isFetching && <p className="Color__loading">Loading more colors...</p>}
     </section>
   );
 }

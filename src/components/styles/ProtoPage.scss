@@ -74,3 +74,10 @@
     }
   }
 }
+
+.Color__loading {
+  font-family: $primary-font;
+  grid-column: grid1 / grid12;
+  width: 100%;
+  text-align: center;
+}
