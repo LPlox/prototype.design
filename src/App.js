@@ -143,7 +143,9 @@ function App() {
       <div className="App">
         <Nav />
 
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+          fallback={<div className="suspence__loading">Loading...</div>}
+        >
           <Switch>
             <Route exact path="/">
               <Home
