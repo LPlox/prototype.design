@@ -44,7 +44,7 @@ function Render({ font, colorScheme, designIndex, windowWidth }) {
 
   const renderWebsite = (e) => {
     // e.preventDefault();
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setTimeout(function () {
       html2canvas(ref.current, {
         scale: renderScale,
@@ -52,7 +52,7 @@ function Render({ font, colorScheme, designIndex, windowWidth }) {
       }).then((render) => {
         const a = document.createElement("a");
         a.href = render.toDataURL();
-        a.download = "receipt.png";
+        a.download = "render.png";
         a.click();
       });
     }, 2000);

@@ -6,8 +6,11 @@
 
 .render__desc {
   @include default-body;
-  grid-row: 6;
-  grid-column: grid1 / grid12;
+  position: absolute;
+  top: 20vh;
   width: 100%;
   text-align: center;
+  @include tablet-down {
+    font-size: 0.6rem;
+  }
 }
