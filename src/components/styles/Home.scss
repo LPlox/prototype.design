@@ -5,12 +5,12 @@ $desc-size-mobile: 1.4rem;
 
 .home {
   background-image: url("../../assets/img/backgroundImg.png");
-  background-size: 100%;
-  // @include tablet-down {
-  //   background-image: url("../../assets/img/backgroundImg.png");
-  //   background-size: 100%;
-  //   background-position-y: 0;
-  // }
+  background-position-y: -70px;
+  @include tablet-down {
+    background-image: url("../../assets/img/backgroundImgMobile.png");
+    background-size: 100%;
+    background-position-y: 0;
+  }
 }
 
 .title {
