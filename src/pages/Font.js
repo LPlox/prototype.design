@@ -70,7 +70,7 @@ function Font({ windowWidth, fontData, setFont }) {
 
             if (windowWidth < 468) {
               gridOrder = "grid1 / grid12";
-              webHeight = "26vh";
+              webHeight = "36vh";
             } else if (windowWidth > 468 && windowWidth < 768) {
               gridOrder = "grid1 / grid12";
               webHeight = "50vh";
@@ -108,6 +108,7 @@ function Font({ windowWidth, fontData, setFont }) {
                 <FontDisplay
                   font={font}
                   divStyle={checked === i ? checkedStyle : renderStyle}
+                  mobile={windowWidth < 500 ? true : false}
                 />
               </div>
             );

@@ -7,6 +7,13 @@
   grid-template-rows: 1fr 1fr 0.3fr 1fr 1fr;
   column-gap: 10px;
 
+  .font__id {
+    padding: 4px;
+    grid-column: 5;
+    grid-row: 1;
+    font-family: $secondary-font;
+  }
+
   .font__header-type {
     position: relative;
     top: 16%;
@@ -14,8 +21,7 @@
     grid-row: 2;
     width: 100%;
     text-align: right;
-    font-family: $primary-font;
-    font-size: 0.8rem;
+    font-family: $secondary-font;
     white-space: nowrap;
   }
   .font__subheader-type {
@@ -25,8 +31,7 @@
     grid-row: 3;
     width: 100%;
     text-align: right;
-    font-family: $primary-font;
-    font-size: 0.8rem;
+    font-family: $secondary-font;
     white-space: nowrap;
   }
   .font__body-type {
@@ -34,7 +39,7 @@
     grid-row: 4;
     width: 100%;
     text-align: right;
-    font-family: $primary-font;
+    font-family: $secondary-font;
     font-size: 0.8rem;
     white-space: nowrap;
   }
