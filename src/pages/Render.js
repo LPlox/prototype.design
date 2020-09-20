@@ -4,48 +4,94 @@ import "../components/styles/Render.scss";
 import InfoBtn from "../components/InfoBtn";
 import GeneratedDesign from "../components/GeneratedDesign";
 import html2canvas from "html2canvas";
+import GeneratedInfo from "../components/GeneratedInfo";
 
 function Render({ font, colorScheme, designIndex, windowWidth }) {
   const ref = React.createRef();
 
-  const divStyle = {
-    width: "100%",
+  const divStyle =
+    windowWidth > 768
+      ? {
+          width: "100%",
+          gridColumn: "grid1 / grid12",
+          zIndex: 2,
+          translateX: "-5px",
+          cursor: "pointer",
+          paddingRight: "2%",
+        }
+      : {
+          width: "100%",
+          gridColumn: "grid1 / grid12",
+          zIndex: 2,
+          translateX: "-5px",
+          cursor: "pointer",
+        };
+
+  const renderInfoStyle = {
+    display: "flex",
+    flexDirections: "row",
+    justifyContent: "space-between",
+    color: colorScheme ? colorScheme[4] : "black",
     gridColumn: "grid1 / grid12",
-    transform: "scale(0.8, 0.8)",
+    gridRow: "4",
+    padding: "0 5%",
+    height: "auto",
+    width: "100%",
+    marginTop: "10vh",
   };
 
   const renderScale = windowWidth > 768 ? 6 : 10;
 
   const renderWebsite = (e) => {
     // e.preventDefault();
-    // window.scrollTo(0, ref.current.offsetTop - 100);
-    // setTimeout(function () {
-    html2canvas(ref.current, { scale: renderScale }).then((render) => {
-      const a = document.createElement("a");
-      a.href = render.toDataURL();
-      a.download = "receipt.png";
-      a.click();
-    });
-    // }, 2000);
+    window.scrollTo(0, 0);
+    setTimeout(function () {
+      html2canvas(ref.current, {
+        scale: renderScale,
+        backgroundColor: colorScheme[2],
+      }).then((render) => {
+        const a = document.createElement("a");
+        a.href = render.toDataURL();
+        a.download = "receipt.png";
+        a.click();
+      });
+    }, 2000);
   };
 
   return (
-    <div className="proto">
+    <div className="proto" style={{ overflow: "hidden" }}>
       <p className="proto__deco">20.821.001</p>
       <p className="proto__links">Layout &gt; Fonts &gt; Colors &gt; Render</p>
       <h1 className="proto__header">DESIGN RENDER</h1>
       <InfoBtn />
-      {font && colorScheme && designIndex ? (
-        <div style={divStyle} ref={ref}>
-          <GeneratedDesign
-            font={font}
-            colorScheme={colorScheme}
-            designIndex={designIndex}
-          />
-        </div>
-      ) : (
-        <p>Something is missing...</p>
-      )}
+
+      <div style={{ gridColumn: "grid1 / grid12" }}>
+        <p data-html2canvas-ignore="true" className="render__desc">
+          Click render download
+        </p>
+        {font && colorScheme && designIndex ? (
+          <div style={divStyle} ref={ref}>
+            <div
+              style={{ transform: "scale(0.9, 0.9)" }}
+              onClick={renderWebsite}
+            >
+              <GeneratedDesign
+                font={font}
+                colorScheme={colorScheme}
+                designIndex={designIndex}
+              />
+            </div>
+            <div className="render__edit" style={{ display: "block" }}>
+              <GeneratedInfo
+                font={font}
+                colorScheme={colorScheme}
+                divStyle={renderInfoStyle}
+                windowWidth={windowWidth}
+              />
+            </div>
+          </div>
+        ) : null}
+      </div>
       {/* {renderPage ? (
         <div
           style={{
@@ -77,9 +123,17 @@ function Render({ font, colorScheme, designIndex, windowWidth }) {
           </div>
         </div>
       ) : null} */}
-      <button className="download__btn" id="download" onClick={renderWebsite}>
-        Download render as png
-      </button>
+      {/* <div className="render__edit" style={{ display: "block" }}>
+        <GeneratedInfo
+          font={font}
+          colorScheme={colorScheme}
+          divStyle={renderInfoStyle}
+          windowWidth={windowWidth}
+        />
+        <p data-html2canvas-ignore="true" className="render__desc">
+          Click to download
+        </p>
+      </div> */}
     </div>
   );
 }
