@@ -55,7 +55,7 @@ function Home({
           come to life.
         </h2>
         <div className="title__cta">
-          <Link to="/prototype/layout" onClick={() => setRandom(false)}>
+          <Link to="/prototype/layout">
             <button className="cta__btn">
               <p>Start Prototyping</p>
             </button>

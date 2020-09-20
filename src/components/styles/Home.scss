@@ -140,6 +140,7 @@ $desc-size-mobile: 1.4rem;
 
   .generated-design__cta {
     @include default-cta;
+    @include default-body;
     @include grid-center;
     grid-row: 6;
     display: flex;

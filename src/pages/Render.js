@@ -1,25 +1,32 @@
 import React from "react";
 import "../components/styles/ProtoPage.scss";
+import "../components/styles/Render.scss";
 import InfoBtn from "../components/InfoBtn";
 import GeneratedDesign from "../components/GeneratedDesign";
+import html2canvas from "html2canvas";
 
-function Render({
-  font,
-  colorScheme,
-  designIndex,
-  fontMultiplier,
-  windowWidth,
-}) {
+function Render({ font, colorScheme, designIndex, windowWidth }) {
+  const ref = React.createRef();
+
   const divStyle = {
     width: "100%",
     gridColumn: "grid1 / grid12",
+    transform: "scale(0.8, 0.8)",
   };
 
-  const renderInfoStyle = {
-    // backgroundColor: colorScheme ? colorScheme[2] : "white",
-    // color: colorScheme ? colorScheme[4] : "black",
-    // height: windowWidth > 768 ? "70vh" : "30vh",
-    // padding: "0.1px",
+  const renderScale = windowWidth > 768 ? 6 : 10;
+
+  const renderWebsite = (e) => {
+    // e.preventDefault();
+    // window.scrollTo(0, ref.current.offsetTop - 100);
+    // setTimeout(function () {
+    html2canvas(ref.current, { scale: renderScale }).then((render) => {
+      const a = document.createElement("a");
+      a.href = render.toDataURL();
+      a.download = "receipt.png";
+      a.click();
+    });
+    // }, 2000);
   };
 
   return (
@@ -29,19 +36,50 @@ function Render({
       <h1 className="proto__header">DESIGN RENDER</h1>
       <InfoBtn />
       {font && colorScheme && designIndex ? (
-        <div style={divStyle}>
+        <div style={divStyle} ref={ref}>
           <GeneratedDesign
             font={font}
             colorScheme={colorScheme}
             designIndex={designIndex}
-            divStyle={renderInfoStyle}
-            fontMultiplier={fontMultiplier}
-            divHeight={"80%"}
           />
         </div>
       ) : (
         <p>Something is missing...</p>
       )}
+      {/* {renderPage ? (
+        <div
+          style={{
+            width: "100vw",
+            height: "110vh",
+            overflow: "hidden",
+            position: "absolute",
+          }}
+        >
+          <div
+            className="render"
+            ref={ref}
+            style={colorScheme ? { backgroundColor: colorScheme[2] } : {}}
+          >
+            <GeneratedDesign
+              font={font}
+              colorScheme={colorScheme}
+              designIndex={designIndex}
+              divStyle={renderInfoStyle}
+              fontMultiplier={0.6}
+            />
+            <button
+              data-html2canvas-ignore="true"
+              className="download__btn"
+              onClick={renderWebsite}
+            >
+              Download render as png
+            </button>
+          </div>
+        </div>
+      ) : null} */}
+      <button className="download__btn" id="download" onClick={renderWebsite}>
+        Download render as png
+      </button>
     </div>
   );
 }
