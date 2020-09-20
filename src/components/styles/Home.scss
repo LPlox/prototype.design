@@ -7,7 +7,8 @@ $desc-size-mobile: 1.4rem;
   background-image: url("../../assets/img/backgroundImg.png");
   background-position-y: -70px;
   @include tablet-down {
-    background-size: 160%;
+    background-image: url("../../assets/img/backgroundImg.png");
+    background-size: 100%;
     background-position-y: 0;
   }
 }
