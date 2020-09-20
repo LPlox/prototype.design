@@ -66,9 +66,6 @@ function Render({ font, colorScheme, designIndex, windowWidth }) {
       <InfoBtn />
 
       <div style={{ gridColumn: "grid1 / grid12" }}>
-        <p data-html2canvas-ignore="true" className="render__desc">
-          Click render download
-        </p>
         {font && colorScheme && designIndex ? (
           <div style={divStyle} ref={ref}>
             <div
@@ -134,6 +131,9 @@ function Render({ font, colorScheme, designIndex, windowWidth }) {
           Click to download
         </p>
       </div> */}
+      <p data-html2canvas-ignore="true" className="render__desc">
+        Click render download
+      </p>
     </div>
   );
 }
