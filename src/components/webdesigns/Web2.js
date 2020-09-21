@@ -2,49 +2,73 @@ import React from "react";
 import GenTitle from "./GenTitle";
 import GenSubHeader from "./GenSubHeader";
 import GenBodyText from "./GenBodyText";
-import "./styles/web01.scss";
+import "./styles/web02.scss";
 
-function Web2({ header, subheader, body, colorScheme, fontMultiplier = 1 }) {
+function Web2({ header, subheader, body, colorScheme, fontMultiplier }) {
   return (
     <div
       className="website-temp"
       style={
         colorScheme
           ? {
-              backgroundColor: colorScheme[0],
-              border: `2px solid ${colorScheme[2]}`,
+              backgroundColor: colorScheme[2],
+              border: `2px solid ${colorScheme[4]}`,
+              overflow: "hidden",
             }
-          : {}
+          : { overflow: "hidden" }
       }
     >
       <div className="content-temp">
-        <GenTitle
-          className="temp-title"
-          font={header.font}
-          size={fontMultiplier ? 3 * fontMultiplier + "vw" : "3vw"}
-          weight={header.weight}
-          color={colorScheme ? colorScheme[4] : ""}
-          content={header.font.toString() + " 02"}
-        />
+        <div className="temp2__top">
+          <GenTitle
+            className="temp2__title"
+            font={header.font}
+            size={fontMultiplier ? 1.2 * fontMultiplier + "vw" : "1.2vw"}
+            weight={700}
+            color={colorScheme ? colorScheme[0] : ""}
+            content={"Brand"}
+          />
+          <div className="temp2__links">
+            <GenSubHeader
+              className="temp2__link"
+              font={subheader.font}
+              size={fontMultiplier ? 1 * fontMultiplier + "vw" : "1vw"}
+              weight={subheader.weight}
+              color={colorScheme ? colorScheme[0] : ""}
+              content={"About"}
+            />
+            <GenSubHeader
+              className="temp2__link"
+              font={subheader.font}
+              size={fontMultiplier ? 1 * fontMultiplier + "vw" : "1vw"}
+              weight={subheader.weight}
+              color={colorScheme ? colorScheme[0] : ""}
+              content={"Contact"}
+            />
+          </div>
+        </div>
+
         <GenSubHeader
-          className="temp-subheader"
+          className="temp2__subheader"
           font={subheader.font}
-          size={fontMultiplier ? 3 * fontMultiplier + "vw" : "3vw"}
+          size={fontMultiplier ? 1.6 * fontMultiplier + "vw" : "1.6vw"}
           weight={subheader.weight}
           color={colorScheme ? colorScheme[4] : ""}
-          content={subheader.font.toString()}
+          content={"About Us"}
         />
-        <GenBodyText
-          className="temp-body"
-          font={body.font}
-          size={fontMultiplier ? 3 * fontMultiplier + "vw" : "3vw"}
-          weight={body.weight}
-          color={colorScheme ? colorScheme[4] : ""}
-          content={
-            body.font.toString() +
-            " Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vero accusantium porro necessitatibus quasi totam inventore odio fuga iusto eum, iure sequi, consequatur sit. Accusantium iusto placeat eligendi rerum?"
-          }
-        />
+
+        <div className="temp2__main">
+          <GenBodyText
+            className="temp2__body"
+            font={body.font}
+            size={fontMultiplier ? 3 * fontMultiplier + "vw" : "3vw"}
+            weight={body.weight}
+            color={colorScheme ? colorScheme[4] : ""}
+            content={
+              "Our team is made up of professionals who work together on a daily basis working towards common goals such as efficiency, quality, customer service skills & processes, product development, online/offline marketing, brand management, strategic planning etc."
+            }
+          />
+        </div>
       </div>
     </div>
   );

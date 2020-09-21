@@ -1,0 +1,46 @@
+@import "root";
+
+.temp2__top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw;
+}
+
+.temp2__links {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 8%;
+}
+
+.temp2__link {
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+}
+
+.temp2__title {
+  width: 30%;
+  text-align: center;
+}
+
+.temp2__subheader {
+  width: 100%;
+  text-align: center;
+  padding: 2% 0;
+}
+
+.temp2__main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4%;
+}
+
+.temp2__body {
+  width: 90%;
+  display: flex;
+  text-align: center;
+}

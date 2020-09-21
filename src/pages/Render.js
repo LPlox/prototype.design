@@ -48,7 +48,7 @@ function Render({ font, colorScheme, designIndex, windowWidth }) {
     setTimeout(function () {
       html2canvas(ref.current, {
         scale: renderScale,
-        backgroundColor: colorScheme[2],
+        backgroundColor: designIndex === 2 ? colorScheme[0] : colorScheme[2],
       }).then((render) => {
         const a = document.createElement("a");
         a.href = render.toDataURL();

@@ -1,5 +1,92 @@
 @import "root";
 
+.temp1__nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1vw;
+  border-bottom: solid;
+  border-width: 0.2vh;
+}
+
+.temp1__nav--link {
+  font-size: 1.6vw;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+}
+
+.temp1__title {
+  font-size: 1.6vw;
+  width: 30%;
+  text-align: center;
+}
+
+.temp1__socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-top: 1%;
+  padding-right: 1%;
+}
+
+.temp1__socials > svg {
+  margin-right: 1%;
+}
+
+.temp1__subheader {
+  font-size: 3.2vw;
+  width: 100%;
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+.temp1__main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4%;
+  flex-direction: column;
+  padding: 5%;
+}
+
+.temp1__body {
+  font-size: 2vw;
+  width: 60%;
+  display: flex;
+  text-align: center;
+}
+
+.temp1__blocks {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.temp1__block {
+  width: 46%;
+  height: 40vh;
+}
+
+.temp1__block:first-child {
+  background-image: url("../assets/nick-adams-yTWq8n3-4k0-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.temp1__block:nth-child(2) {
+  background-image: url("../assets/water-journal--EvvsegVoUE-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+//FIRST TEMP
+
 // <div class="iframe">
 // <div class="container">
 // <div class="wrapper">

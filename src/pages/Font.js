@@ -68,12 +68,12 @@ function Font({ windowWidth, fontData, setFont }) {
               bgIndex++;
             }
 
-            if (windowWidth < 468) {
+            if (windowWidth < 900) {
               gridOrder = "grid1 / grid12";
               webHeight = "36vh";
-            } else if (windowWidth > 468 && windowWidth < 768) {
-              gridOrder = "grid1 / grid12";
-              webHeight = "50vh";
+              // } else if (windowWidth > 468 && windowWidth < 768) {
+              //   gridOrder = "grid1 / grid12";
+              //   webHeight = "50vh";
             } else {
               gridOrder = i % 2 === 0 ? "grid1 / grid6" : "grid7 / grid12";
               webHeight = "50vh";
