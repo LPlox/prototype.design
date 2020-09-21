@@ -2,9 +2,9 @@ import React from "react";
 import GenTitle from "./GenTitle";
 import GenSubHeader from "./GenSubHeader";
 import GenBodyText from "./GenBodyText";
-import "./styles/web01.scss";
+import "./styles/web03.scss";
 
-function Web3({ header, subheader, body, colorScheme, fontMultiplier = 1 }) {
+function Web3({ header, subheader, body, colorScheme, fontMultiplier }) {
   return (
     <div
       className="website-temp"
@@ -13,38 +13,87 @@ function Web3({ header, subheader, body, colorScheme, fontMultiplier = 1 }) {
           ? {
               backgroundColor: colorScheme[0],
               border: `2px solid ${colorScheme[2]}`,
+              overflow: "hidden",
             }
-          : {}
+          : { overflow: "hidden" }
       }
     >
-      <div className="content-temp">
-        <GenTitle
-          className="temp-title"
-          font={header.font}
-          size={fontMultiplier ? 2 * fontMultiplier + "vw" : "2vw"}
-          weight={header.weight}
-          color={colorScheme ? colorScheme[4] : ""}
-          content={header.font.toString() + " 03"}
-        />
+      <div className="content__temp">
+        <div className="temp3__links">
+          <GenSubHeader
+            className="temp3__link"
+            font={subheader.font}
+            size={fontMultiplier ? 1.6 * fontMultiplier + "vw" : "1.6vw"}
+            weight={subheader.weight}
+            color={colorScheme ? colorScheme[2] : ""}
+            content={"MEN"}
+          />
+          <GenSubHeader
+            className="temp3__link"
+            font={subheader.font}
+            size={fontMultiplier ? 1.6 * fontMultiplier + "vw" : "1.6vw"}
+            weight={subheader.weight}
+            color={colorScheme ? colorScheme[2] : ""}
+            content={"WOMEN"}
+          />
+          <GenSubHeader
+            className="temp3__link"
+            font={subheader.font}
+            size={fontMultiplier ? 1.6 * fontMultiplier + "vw" : "1.6vw"}
+            weight={subheader.weight}
+            color={colorScheme ? colorScheme[2] : ""}
+            content={"KIDS"}
+          />
+          <GenSubHeader
+            className="temp3__link"
+            font={subheader.font}
+            size={fontMultiplier ? 1.6 * fontMultiplier + "vw" : "1.6vw"}
+            weight={subheader.weight}
+            color={colorScheme ? colorScheme[2] : ""}
+            content={"ACCESSORIES"}
+          />
+          <GenSubHeader
+            className="temp3__link"
+            font={subheader.font}
+            size={fontMultiplier ? 1.6 * fontMultiplier + "vw" : "1.6vw"}
+            weight={subheader.weight}
+            color={colorScheme ? colorScheme[2] : ""}
+            content={"SHOES"}
+          />
+        </div>
+
+        <h1
+          className="temp3__title"
+          style={{
+            fontFamily: header.font,
+            fontSize: fontMultiplier ? 5.5 * fontMultiplier + "vw" : "5.5vw",
+            color: colorScheme ? colorScheme[1] : "",
+            weight: 700,
+          }}
+        >
+          FASHION STYLING <br /> TAILORING <br /> HIGH FASHION ACCESSORIES
+        </h1>
+
         <GenSubHeader
-          className="temp-subheader"
+          className="temp3__subheader"
           font={subheader.font}
-          size={fontMultiplier ? 3 * fontMultiplier + "vw" : "3vw"}
+          size={fontMultiplier ? 1.6 * fontMultiplier + "vw" : "1.6vw"}
           weight={subheader.weight}
           color={colorScheme ? colorScheme[4] : ""}
-          content={subheader.font.toString()}
+          content={"BRAND"}
         />
-        <GenBodyText
-          className="temp-body"
-          font={body.font}
-          size={fontMultiplier ? 3.2 * fontMultiplier + "vw" : "3.2vw"}
-          weight={body.weight}
-          color={colorScheme ? colorScheme[4] : ""}
-          content={
-            body.font.toString() +
-            " Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vero accusantium porro necessitatibus quasi totam inventore odio fuga iusto eum, iure sequi, consequatur sit. Accusantium iusto placeat eligendi rerum?"
-          }
-        />
+        <div className="temp3__main">
+          <GenBodyText
+            className="temp3__note"
+            font={body.font}
+            size={fontMultiplier ? 0.6 * fontMultiplier + "vw" : "0.6vw"}
+            weight={body.weight}
+            color={colorScheme ? colorScheme[4] : ""}
+            content={
+              "WE OFFER FASHION STORE FOR MORE THAN 20 YEARS, WE PROVIDE YOU THE SAME FASHION ACCESSIBILITY AT A FASTER TIMES."
+            }
+          />
+        </div>
       </div>
     </div>
   );

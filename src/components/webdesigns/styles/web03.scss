@@ -1,0 +1,37 @@
+@import "root";
+
+.temp3__links {
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+.temp3__link {
+  text-decoration: none;
+  padding: 0 2%;
+}
+
+.temp3__title {
+  text-align: center;
+  margin: 2% 0;
+}
+
+.temp3__subheader {
+  width: 100%;
+  text-align: center;
+  font-size: 2vw;
+  margin: 0;
+}
+
+.temp3__main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.temp3__body {
+  width: 90%;
+  display: flex;
+  text-align: center;
+  font-size: 1.4vw;
+}

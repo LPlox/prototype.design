@@ -105,7 +105,7 @@ function Web1({ header, subheader, body, colorScheme, fontMultiplier }) {
             size={fontMultiplier ? 2.3 * fontMultiplier + "vw" : "2.3vw"}
             weight={subheader.weight}
             color={colorScheme ? colorScheme[4] : ""}
-            content={"Our work"}
+            content={"Portfolio"}
           />
 
           <GenBodyText
