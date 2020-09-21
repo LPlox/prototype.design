@@ -1,5 +1,5 @@
 import React from "react";
-import GenTitle from "./GenTitle";
+// import GenTitle from "./GenTitle";
 import GenSubHeader from "./GenSubHeader";
 import GenBodyText from "./GenBodyText";
 import "./styles/web03.scss";
