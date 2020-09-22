@@ -20,7 +20,7 @@ function Nav() {
         <ul className="nav__links">
           <li>
             <NavLink
-              className="nav__link"
+              className="nav__link link--noMobile"
               activeClassName="nav__link--selected"
               to="/prototype/layout"
               isActive={checkActive}
@@ -30,7 +30,7 @@ function Nav() {
           </li>
           <li>
             <NavLink
-              className="nav__link"
+              className="nav__link link--noMobile"
               activeClassName="nav__link--selected"
               to="/about"
             >

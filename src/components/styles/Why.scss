@@ -2,49 +2,51 @@
 
 .why__section {
   @include grid-main-layout;
-  gap: 50px;
+  column-gap: 4%;
+  row-gap: 30px;
+}
+.why__title {
+  @include grid-center;
+  font-family: $secondary-font;
+  font-size: 3vw;
+}
 
-  .why__title {
+.why__header {
+  @include default-header;
+  @include grid-center;
+}
+
+.why__textbox--left {
+  @include default-body;
+  grid-column: grid1 / grid6;
+  text-align: justify;
+  @include tablet-down {
     @include grid-center;
-    font-family: $secondary-font;
-    font-size: 3vw;
   }
-  .why__header {
-    @include default-header;
+}
+
+.why__textbox--right {
+  @include default-body;
+  grid-column: grid7 / grid12;
+  text-align: justify;
+  @include tablet-down {
+    @include grid-center;
+    width: 100%;
+  }
+}
+
+.why__header--left {
+  @include default-header;
+  grid-column: grid1/grid6;
+  @include tablet-down {
     @include grid-center;
   }
-
-  .why__textbox--left {
-    @include default-body;
-    grid-column: grid1 / grid6;
-    text-align: justify;
-    @include tablet-down {
-      @include grid-center;
-    }
-  }
-
-  .why__textbox--right {
-    @include default-body;
-    grid-column: grid7 / grid12;
-    text-align: justify;
-    @include tablet-down {
-      @include grid-center;
-    }
-  }
-
-  .why__header--left {
-    @include default-header;
-    grid-column: grid1/grid6;
-    @include tablet-down {
-      @include grid-center;
-    }
-  }
-  .why__header--right {
-    @include default-header;
-    grid-column: grid7/grid12;
-    @include tablet-down {
-      @include grid-center;
-    }
+}
+.why__header--right {
+  @include default-header;
+  grid-column: grid7/grid12;
+  @include tablet-down {
+    @include grid-center;
   }
 }
 

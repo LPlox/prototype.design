@@ -3,7 +3,7 @@ import "../components/styles/Why.scss";
 
 function Why() {
   return (
-    <main>
+    <main className="why__main">
       <section className="why__section">
         <h1 className="why__title">Why Prototype Design?</h1>
         <h2 className="why__header">1.1 How did the project come to start?</h2>
@@ -18,7 +18,7 @@ function Why() {
           coding and how to use the code to solve real life problems, so instead
           of learning something from scratch I decided use everything I've
           learnt to try and solve a personal problem. How do you design a
-          website?{" "}
+          website
         </p>
         <p className="why__textbox--right">
           The idea started when I was scrolling r/webdev forum on reddit. There
@@ -84,10 +84,10 @@ function Why() {
           project there will be a MVP shown.
         </p>
       </section>
-      <section>
-        <h2 className="why__header">2.1 Planning the MVP</h2>
-        <p>
-          This is what I've accomplished during the module
+      <section className="why__section">
+        <h2 className="why__header grid-1">2.1 Planning the MVP</h2>
+        <p className="why__textbox--left grid-2">
+          MVP 1: This is what I've accomplished during the module
           <ul>
             <li>Font selection</li>
             <li>Color scheme selection</li>
@@ -95,6 +95,24 @@ function Why() {
             <li>Saving the render </li>
           </ul>
         </p>
+        <p className="why__textbox--right grid-2">
+          MVP 2: As for the future there will be more functionalities. Testing
+          will be done on users and there also may be functionalities removed if
+          the solution has to big of a scope or the functions are too scattered.
+          <ul>
+            <li>Be able to select each color </li>
+            <li>Be able to select specific fonts </li>
+            <li>Text editing on the designs</li>
+            <li>
+              Be able to read about where the data is collected from and
+              resources on where you can learn and read more about special
+              terms.{" "}
+            </li>
+          </ul>
+        </p>
+      </section>
+      <section className="why__section">
+        <h2 className="why__header grid-1">Preparing the environment</h2>
       </section>
     </main>
   );

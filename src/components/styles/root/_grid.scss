@@ -3,7 +3,8 @@
   display: grid;
   grid-template-columns: 4fr repeat(12, minmax(0, 1fr)) 4fr;
   grid-template-areas: "paddLeft grid1 grid2 grid3 grid4 grid5 grid6 grid7 grid8 grid9 grid10 grid11 grid12 paddRight";
-  gap: 20px;
+  column-gap: 2%;
+  row-gap: 20px;
 }
 
 @mixin grid-center {

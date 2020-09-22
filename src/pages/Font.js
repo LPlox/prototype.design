@@ -108,7 +108,7 @@ function Font({ windowWidth, fontData, setFont }) {
                 <FontDisplay
                   font={font}
                   divStyle={checked === i ? checkedStyle : renderStyle}
-                  mobile={windowWidth < 500 ? true : false}
+                  mobile={windowWidth < 700 ? true : false}
                 />
               </div>
             );

@@ -17,10 +17,16 @@
   flex-direction: row;
   justify-items: center;
   align-items: center;
-  padding-right: 10vw;
+  padding-right: 8vw;
   grid-area: 1 / grid8 / 2 / grid12;
   font-family: $primary-font;
 
+  @include tablet-down {
+    grid-area: 1 / grid10 / 2 / grid12;
+  }
+}
+
+.link--noMobile {
   @include tablet-down {
     display: none;
   }
