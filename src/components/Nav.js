@@ -41,9 +41,9 @@ function Nav() {
             <NavLink
               className="nav__link"
               activeClassName="nav__link--selected"
-              to="/contact"
+              to="/why"
             >
-              CONTACT
+              WHY
             </NavLink>
           </li>
         </ul>

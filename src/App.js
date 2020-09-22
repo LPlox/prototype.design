@@ -8,7 +8,7 @@ import fontGenData from "./components/data/fontCombo.json";
 import colorData from "./components/data/colorSchemes.json";
 
 const Resources = lazy(() => import("./pages/Resources"));
-const Contact = lazy(() => import("./pages/Contact"));
+const Why = lazy(() => import("./pages/Why"));
 const Layout = lazy(() => import("./pages/Layout"));
 const Font = lazy(() => import("./pages/Font"));
 const Color = lazy(() => import("./pages/Color"));
@@ -168,8 +168,8 @@ function App() {
             <Route path="/resources">
               <Resources />
             </Route>
-            <Route path="/contact">
-              <Contact />
+            <Route path="/why">
+              <Why />
             </Route>
             <Route path="/prototype/layout">
               <Layout windowWidth={windowWidth} setWebTemp={setWebTemp} />
