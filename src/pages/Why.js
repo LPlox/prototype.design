@@ -47,7 +47,7 @@ function Why() {
           <div className="nav__right">
             <ul>
               <li>
-                <a href="#2.5">2.5 Testing out main functionalities</a>
+                <a href="#2.5">2.5 Testing out the main functionalities</a>
               </li>
 
               <li>
@@ -60,10 +60,10 @@ function Why() {
                 <a href="#3.2">3.2 Development journey</a>
               </li>
               <li>
-                <a href="#3.3">4.1 Lessons learned</a>
+                <a href="#4.1">4.1 Lessons learned</a>
               </li>
               <li>
-                <a href="#3.4">4.2 Practices I will continue doing</a>
+                <a href="#4.2">4.2 Practices I will continue doing</a>
               </li>
             </ul>
           </div>
@@ -85,6 +85,10 @@ function Why() {
               2.1 Planning
             </a>{" "}
             &{" "}
+            <a className="why__textlink" href="#2.2">
+              2.2 MVP(s)
+            </a>{" "}
+            &{" "}
             <a className="why__textlink" href="#2.3">
               2.3 Research and resources
             </a>
@@ -95,8 +99,16 @@ function Why() {
             </a>
             <br />
             C6 &#8594;{" "}
-            <a className="why__textlink" href="#3.1">
-              3.1 to 3.4
+            <a className="why__textlink" href="#2.5">
+              2.5 Testing out main functionalities
+            </a>{" "}
+            &{" "}
+            <a className="why__textlink" href="#3.2">
+              3.2 Development journey
+            </a>
+            &{" "}
+            <a className="why__textlink" href="#4.1">
+              4.1 Lessons Learned
             </a>
             <br />
             <a
@@ -528,7 +540,7 @@ function Why() {
       </div>
       <div className="why__section">
         <h2 className="why__header--left grid-1" id="2.5">
-          2.4 Testing out the main functionality
+          2.5 Testing out the main functionality
         </h2>
         <div className="why__textbox--left grid-2">
           Trying to code the functionalities was the part of the project that
@@ -696,8 +708,8 @@ function Why() {
         </div>
       </div>
       <div className="why__section">
-        <h2 className="why__header--left grid-1" id="3.3">
-          3.3 Lessons learned
+        <h2 className="why__header--left grid-1" id="4.1">
+          4.1 Lessons learned
         </h2>
         <div className="why__textbox--left grid-2">
           <ul>
@@ -726,8 +738,8 @@ function Why() {
             </li>
           </ul>
         </div>
-        <h2 className="why__header--right grid-1" id="3.4">
-          3.4 Practices I will continue doing
+        <h2 className="why__header--right grid-1" id="4.2">
+          4.2 Practices I will continue doing
         </h2>
         <div className="why__textbox--right grid-2">
           <ul>
