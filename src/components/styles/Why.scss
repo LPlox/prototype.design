@@ -1,19 +1,54 @@
 @import "root";
 
+$border-top: 5rem solid
+  rgba(
+    $color: #ffffff,
+    $alpha: 0,
+  );
+
 .why__section {
   @include grid-main-layout;
   column-gap: 4%;
   row-gap: 30px;
 }
+
+.why__nav {
+  @include default-subheader;
+  font-size: 1.2rem;
+  @include grid-center;
+
+  @include tablet-up {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.5fr;
+
+    .nav__left {
+      grid-column: 1/1;
+    }
+    .nav__right {
+      grid-column: 2/2;
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+}
+
+.why__tldr {
+  @include grid-center;
+}
+
 .why__title {
   @include grid-center;
   font-family: $secondary-font;
-  font-size: 3vw;
+  font-size: 3rem;
+  padding-top: 4rem;
 }
 
 .why__header {
   @include default-header;
   @include grid-center;
+  border-top: $border-top;
 }
 
 .why__textbox--left {
@@ -38,16 +73,54 @@
 .why__header--left {
   @include default-header;
   grid-column: grid1/grid6;
+  border-top: $border-top;
   @include tablet-down {
     @include grid-center;
   }
 }
+
 .why__header--right {
   @include default-header;
   grid-column: grid7/grid12;
+  border-top: $border-top;
   @include tablet-down {
     @include grid-center;
   }
+}
+
+.why__quote {
+  background-color: #4855b7;
+  color: white;
+  font-weight: 700;
+}
+
+.why__img--left {
+  grid-column: grid1/grid6;
+  width: 100%;
+}
+
+.why__img--right {
+  grid-column: grid7/grid12;
+  width: 100%;
+}
+
+.why__textlink {
+  color: $primary-color;
+}
+
+summary {
+  padding: 4px;
+  &:focus {
+    outline: 2px solid $primary-color;
+  }
+}
+
+blockquote {
+  padding-left: 2rem;
+}
+
+.figma {
+  @include grid-center;
 }
 
 @include tablet-up {

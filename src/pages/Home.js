@@ -70,7 +70,7 @@ function Home({
           Last
           <br />
           Update <br />
-          2020.09.10
+          2020.09.25
         </p>
         <p className="title__deco--right">{"20.56." + windowWidth}</p>
       </section>
@@ -141,7 +141,7 @@ function Home({
             used freely after testing.
           </p>
           <Link to="/resources" className="resource__link">
-            Font combinations resources &#8702;{" "}
+          Leads to nowhere for now... sry &#8702;{" "}
           </Link>
         </div>
         <div className="recources__box2">
@@ -152,7 +152,7 @@ function Home({
             that speaks to your purpose.{" "}
           </p>
           <Link to="/resources" className="resource__link">
-            Color scheme resources &#8702;{" "}
+          Leads to nowhere for now... sry &#8702;{" "}
           </Link>
         </div>
         <div className="recources__box3">
@@ -163,7 +163,7 @@ function Home({
             rendering the collection to save on your own{" "}
           </p>
           <Link to="/resources" className="resource__link">
-            Design System resources &#8702;{" "}
+            Leads to nowhere for now... sry &#8702;{" "}
           </Link>
         </div>
       </section>
